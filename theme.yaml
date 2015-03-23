@@ -1,0 +1,8 @@
+---
+name: Ventro
+description: 'The default theme for LemonStand'
+author: 'Daniel Park'
+website: 'http://dparkd.com'
+engine: twig
+customFields: {  }
+---
