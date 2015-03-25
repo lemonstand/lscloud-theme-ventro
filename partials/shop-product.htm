@@ -1,0 +1,135 @@
+{% set on_sale = product.onSale %}
+<div class="container product-detail-top">
+   <div class="row">
+      <div class="col-md-7 row">
+         <div class="col-md-2 product-gallery">
+            {% for img in product.images %}
+              <img src="{{ img.thumbnail('auto', 'auto') }}" onclick='changeImage("{{ img.thumbnail('auto', 'auto') }}")' alt="">
+            {% endfor %}
+         </div>
+         <div class="col-md-10 main-img">
+            <img src="{{ product.images.first.thumbnail('auto','auto') }}" id="big-thumb" alt="">
+         </div>
+      </div>
+
+      <div class="col-md-5 row product-detail">
+
+<!-- ============================= Product name and price -->      
+        <div class="col-md-12">
+          <h1>{{ product.name }} <span>
+            {% if on_sale %}
+              <small class="previous-price">{{ product.fullPrice|currency }}</small>
+            {% endif %}
+            {{ product.price|currency }}</span>
+          </h1>
+          <h2>{{ product.manufacturer.name }}</h2>
+          <hr>
+          <p>{{ product.description|unescape }}</p>
+        </div>
+<!-- ============================= Product Quantity -->
+{% if not product.isOutOfStock() or product.allow_preorder %}      
+        <div class="col-md-6">
+          <input type="hidden" name="productId" value="{{ product.id }}"/>
+          <div class="add-cart-holder form-group">
+            <div class="quantity-selector">
+              <p class="title">Quantity</p>
+              <input class="form-control quantity" type="text" value="{{ quantity|default("1") }}" name="quantity"/>
+            </div>
+          </div>
+        </div>
+        
+        {{ partial('shop-product-options') }}
+        {{ partial('shop-product-extras') }}
+
+        <div class="col-md-12">
+          {{ flash() }}
+          <a class="btn btn-important" data-ajax-handler="shop:onAddToCart" data-ajax-update="#normal-carts=shop-minicart-totals, #product-page=shop-product, #mini-cart=shop-minicart" >Add to Cart </a>
+        </div>
+        
+
+
+{% else %}
+  <div class="not-available">
+    <h5>This product is temporarily unavailable</h5>
+  <div>
+{% endif %}
+
+        
+      </div>
+   </div>
+</div>
+
+<div class="container product-detail-bottom">
+  <h1>
+    Product Specs and Details
+  </h1>
+  <div class="col-md-6 spec-row">
+    <div class="col-md-12">
+      <div class="col-md-5">
+        <h4>Dimensions</h4>
+      </div>
+      <div class="col-md-7 text-right">
+        <p>{{ product.width }} x {{ product.height }} x {{ product.depth }}</p>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-5">
+        <h4>Materials</h4>
+      </div>
+      <div class="col-md-7 text-right">
+        <p>{{ product.materials|unescape}}</p>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-5">
+        <h4>Details</h4>
+      </div>
+      <div class="col-md-7 text-right">
+        <p>{{ product.details|unescape}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 facebook">
+    {% if theme.fbCommentsAppIDText > 0 %} <!-- if Facebook App ID is entered, display comments -->
+      <h4 class="text-center">Hallo?</h4>
+      <!-- Product Reviews -->
+      <div class="col-md-12">
+        <div id="fb-root">
+          
+        </div>
+        <script>                            
+          (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id))
+                  return;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId={{ theme.fbCommentsAppIDText }}"; // uses App ID specified in custom options.
+              fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <div class="fb-comments" data-width="730" data-href="https:{{ site_url('/') }}product/{{ product.url_name}}" data-num-posts="10"></div> 
+      </div>
+      <!-- End class="product-reviews" -->
+    {% endif %}
+  </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+  function changeImage(a) {
+    document.getElementById("big-thumb").src=a;
+  };
+</script>

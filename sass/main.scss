@@ -1,7 +1,17 @@
-h1{
-	color: red;
+body{
+	font-family: 'Cabin', sans-serif;
+	text-rendering: geometricPrecision;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.container{
-	background:#f1f1f1;
+a:hover{
+	text-decoration: none;
 }
+
+// Sass imports
+@import "components/functions";
+@import "components/home";
+@import "components/navigation";
+@import "components/button";
+@import "components/product";

@@ -1,8 +1,12 @@
 ---
-name: Ventro
-description: 'The default theme for LemonStand'
+name: 'Ventro'
 author: 'Daniel Park'
 website: 'http://dparkd.com'
 engine: twig
-customFields: {  }
+404: '404'
+customFields:
+    logoImage: { type: image, title: 'Logo Image', default: '@images/centralbikes-logo.png' }
+    title: { type: text, title: 'title of your store', default: 'what in the world woes'}
+    fbCommentsAppIDText: { type: text, title: 'Facebook Comments App ID', default: '123', comment: 'For Facebook product reviews/comments to work, first create an app in Facebook, then paste in your app ID.' }
 ---
+

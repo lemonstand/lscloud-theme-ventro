@@ -1,0 +1,16 @@
+{% if product.extras.count %}
+  <div class="col-md-12 product-extras">
+  <p class="title">Product Extras</p>
+    {% for index, extra in product.extras %}
+        <div class="extra">
+            <label for="{{ 'extra-'~index }}">{{ extra.name }} ({{ extra.price|currency }})</label>
+            {% if extra.enabled %}
+                <input type="checkbox" id="{{ 'extra-'~index }}" {{ checkbox_state(postedExtras[extra.id], extra.id) }} name="extras[{{ extra.id }}]" data-ajax-handler="shop:product" data-ajax-update="#product-page=shop-product">
+            {% else %}
+                <input type="checkbox" disabled="disabled">
+            {% endif %}
+        </div>
+    {% endfor %}
+  </div>
+  <br><br>
+{% endif %}

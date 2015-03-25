@@ -1,0 +1,14 @@
+@mixin background-image($imageurl){
+	background: url($imageurl) center right;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+@mixin transition($time){
+	transition: $time all ease-in-out;
+	-webkit-transition:$time all ease-in-out;
+	-moz-transition:$time all ease-in-out;
+	-o-transition:$time all ease-in-out;
+}
