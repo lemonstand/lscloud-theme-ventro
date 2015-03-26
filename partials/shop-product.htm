@@ -13,7 +13,6 @@
       </div>
 
       <div class="col-md-5 row product-detail">
-
 <!-- ============================= Product name and price -->      
         <div class="col-md-12">
           <h1>{{ product.name }} <span>
@@ -43,7 +42,7 @@
 
         <div class="col-md-12">
           {{ flash() }}
-          <a class="btn btn-important" data-ajax-handler="shop:onAddToCart" data-ajax-update="#normal-carts=shop-minicart-totals, #product-page=shop-product, #mini-cart=shop-minicart" >Add to Cart </a>
+          <a class="btn btn-important" data-ajax-handler="shop:onAddToCart" data-ajax-update="#product-page=shop-product, #mini-cart=shop-minicart, #cart-totals=shop-minicart-totals" >Add to Cart </a>
         </div>
         
 

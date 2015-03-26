@@ -27,6 +27,7 @@
 .navbar{
 	border-radius:0;
 	border:0;
+	z-index:999;
 }
 
 .navbar-default{
@@ -93,6 +94,100 @@
 	}
 	
 }
+
+// ============================== Shop drop ==============================
+.yamm-fw .shop-drop{
+	display:block;
+	opacity:0;
+	pointer-events:none;
+	top:60px;
+	@include transition(0.3s);
+}
+
+
+.open .shop-drop{
+	opacity:1;
+	pointer-events:auto;
+	top:70px;
+}
+
+.shop-drop{
+	width:100%;
+	max-height:600px;
+	position:absolute;
+	left:0;
+	top:60px;
+	background:white;
+	z-index:899;
+	opacity:1;
+	pointer-events:none;
+
+	@include transition(0.3s);
+	ul{
+		list-style:none;
+		padding-left:0;
+	}
+	.cat-box{
+		display:inline-block;
+		padding:0.5%;
+		width:23.4%;
+		vertical-align: top;
+		a{
+			color: #333;
+			@include transition(0.3s);
+			&:hover {
+				color: #acb1b4;
+			}
+		}
+		li{
+			padding-bottom:10px;
+		}
+		.parent-cat{
+			font-weight:700;
+			padding-bottom:10px;
+			font-size:0.9em;
+			letter-spacing: 1px;
+			margin-bottom:20px;
+			border-bottom:1px solid #f1f1f1;
+			text-transform: uppercase;
+
+			@include transition(0.3s);
+
+			&:hover{
+				border-bottom:1px solid #333;
+				a{
+					color: #5d6266;
+				}
+			}
+		}
+	}
+}
+
+#login-drop{
+	width:400px;
+	left:initial;
+	right:0;
+	max-height:800px;
+	.input-sm{
+		padding:15px 10px;
+	}
+	.btn-important{
+		font-size:1em;
+		width:100%;
+		color: white;
+	}
+}
+
+.forgotpass{
+	padding-left:0;
+	font-weight:400;
+}
+
+
+
+
+
+
 
 
 

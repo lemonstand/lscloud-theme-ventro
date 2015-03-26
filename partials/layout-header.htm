@@ -6,8 +6,7 @@
 </div>
 
 
-
-<nav class="navbar navbar-default">
+<nav class="navbar yamm navbar-default">
   <div class="container-fluid container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -23,14 +22,80 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">About</a></li>
+        <li class="dropdown yamm-fw">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop</a>
+          <ul class="dropdown-menu shop-drop">
+          <li>
+            <div class="container yamm-content">
+            {% for category in categories %}
+              <ul class="cat-box">
+              {% if category.children %}
+                <li class="parent-cat"><a href="/category/{{ category.fullUrlName }}">{{category.name}}</a></li>
+                <ul>
+                {% for child in category.children %}
+                  <li><a href="/category/{{ child.fullUrlName }}">{{child.name}}</a></li>
+                {% endfor %}
+                </ul>
+              {% else %}
+                <li class="parent-cat"><a href="/category/{{ category.fullUrlName }}">{{category.name}}</a></li>
+              {% endif %}
+              </ul>
+            {% endfor %}
+            </div>
+          </ul>
+          </li>
+
+          <li class="dropdown yamm-fw">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About</a>
+            <ul class="dropdown-menu shop-drop">
+            <li>
+              <div class="container yamm-content">
+                <ul class="cat-box">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+            </ul>
+          </li>
+
+
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Cart</a></li>
+        <li class="dropdown yamm-fw login-drop">
+          {% if customer %}
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ customer.first_name }}</a>
+          {% else %}
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login</a>
+          {% endif %}
+          <ul class="dropdown-menu shop-drop" id="login-drop">
+          <li>
+            <div class="yamm-content">
+            {% if customer %}
+              {{ partial('profile-form')}}
+            {% else %}
+              {{ partial('login-form') }}
+            {% endif %}
+            </div>
+          </ul>
+        </li>
+        <li class="dropdown yamm-fw login-drop" >
+            <a href="#" class="dropdown-toggle" id="cart-totals" data-toggle="dropdown">{{ partial('shop-minicart-totals') }}</a>
+          <ul class="dropdown-menu shop-drop" id="login-drop">
+          <li>
+            <div class="yamm-content" id="mini-cart">
+              {{ partial('shop-minicart', {'edit_cart': true}) }}
+            </div>
+          </ul>
+        </li>
       </ul>
+      
+      
+
+
+
+
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

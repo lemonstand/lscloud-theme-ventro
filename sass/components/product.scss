@@ -9,7 +9,7 @@
 	}
 	.main-img{
 		img{
-			width:100%;
+			width:95%;
 		}
 	}
 
@@ -19,6 +19,7 @@
 			font-weight:700;
 			text-transform: uppercase;
 			letter-spacing: 1px;
+			font-size:30px;
 			span{
 				color: #656565;
 				text-align: right;
@@ -92,7 +93,7 @@
   margin-top: -.5em;
 }
 
-.quantity{
+.quantity, .input-sm{
 	border-radius:4px;
 	background:white;
 	border:1px solid #ddd;

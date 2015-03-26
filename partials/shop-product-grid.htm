@@ -1,0 +1,38 @@
+{% if category.children|length > 0 %}
+	{% for child in category.children %}
+		{% for product in child.products %}
+
+			<div class="col-md-3 grid-item text-center">
+				<a href="#">
+					<img src="{{ product.images.first.thumbnail(400, 500) }}" alt="">
+					<h1>{{ product.name }}</h1>
+					<p>{{ product.price|currency }} {% if product.onSale %} | <span class="full-price">{{ product.fullPrice|currency }} {% endif %}</span></p>
+				</a>
+				<div class="product-button">
+					<a href="/product/{{ product.url_name }}" class="btn btn-default">
+						View Product
+					</a>
+				</div>
+			</div>
+
+		{% endfor %}
+	{% endfor %}
+{% endif %}
+
+
+{% for product in category.products %}
+
+	<div class="col-md-3 grid-item text-center">
+		<a href="#">
+			<img src="{{ product.images.first.thumbnail(400, 500) }}" alt="">
+			<h1>{{ product.name }}</h1>
+			<p>{{ product.price|currency }} {% if product.onSale %} | <span class="full-price">{{ product.fullPrice|currency }} {% endif %}</span></p>
+		</a>
+		<div class="product-button">
+			<a href="/product/{{ product.url_name }}" class="btn btn-default">
+				View Product
+			</a>
+		</div>
+	</div>
+
+{% endfor %}

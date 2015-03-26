@@ -1,0 +1,8 @@
+{% for child in category.children %}
+<div class="col-md-3 category-item text-center">
+		<h1>{{ child.name }}</h1>
+		<a href="/category/{{ category.fullUrlName }}" class="btn btn-default">
+			View Category
+		</a>
+</div>
+{% endfor %}
