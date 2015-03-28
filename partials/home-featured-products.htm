@@ -1,0 +1,7 @@
+{% if monthly %}
+  {% for product in monthly.products %}
+       {{ partial('shop-grid-item', {'product':product}) }}
+  {% endfor %}
+{% else %}
+  <p class="flash success">The product collection was not found. Please create this group on the Shop/Collections page and name it: monthly.</p>
+{% endif %}

@@ -19,10 +19,11 @@
     {% endfor %}
   </ul>
     <div class="mini-cart-totals">
-      <h4 class="subtotal">Subtotal: {{ cart.getSubtotal()|currency }}</h4>
+      <hr>
+      <h4 class="subtotal text-center">Subtotal: {{ cart.getSubtotal()|currency }}</h4>
       <a class="btn btn-sm btn-link forgotpass col-xs-12" href="{{ site_url('/cart') }}">View Cart</a><br>
       {% if customer %}
-      <a class="col-xs-12 btn btn-default btn-important" href="{{ site_url('/checkout') }}">Checkout</a>
+      <a class="col-xs-12 btn btn-important" href="{{ site_url('/checkout') }}">Checkout</a>
       {% else %}
       <a class="col-xs-12 btn btn-important" href="{{ site_url('/checkout-start') }}">Checkout</a>
       {% endif %}

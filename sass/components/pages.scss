@@ -1,0 +1,45 @@
+@import "components/functions";
+
+.about-head{
+	@include background-image('../images/about-bg.jpg');
+	h1{
+		color: white;
+		opacity: 0.9;
+		padding: 90px 0;
+		text-align: center;
+	}	
+}
+
+.about-text{
+	padding: 60px 15px;
+	.col-md-3{
+		text-align:center;
+		.col-md-12{
+			img{
+				width:50%;
+				margin:0 auto;
+				border-radius:50%;
+			}
+			p{
+				color: #acb1b4;
+			}
+		}
+	}
+}
+
+// ============================== Contact ==============================
+.contact-form{
+	padding: 90px 15px;
+}
+.address{
+	background:#f7f8f9;
+	border:1px solid #ecedee;
+	padding:20px;
+	margin-top:60px;
+	h3{
+		margin-top:0;
+	}
+	i{
+		padding-right:10px;
+	}
+}

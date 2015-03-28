@@ -1,0 +1,19 @@
+---
+action: 'shop:checkout'
+template: checkout
+protocol: all
+published: true
+name: Checkout
+url: /checkout
+---
+<div class="container" id="checkout-row">
+	<div class="row">
+		{% if not items.count %}
+	      <a class="btn btn-default" href="{{ site_url('shop') }}">Your cart is empty! Continue shopping.</a>
+	    {% else %}
+	      <div id="checkout-page">{{ partial('shop-checkout') }}</div>
+	    {% endif %}
+		</div>
+	</div>	
+	
+</div>

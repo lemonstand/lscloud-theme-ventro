@@ -1,0 +1,17 @@
+<div class="row hidden-xs" id="cart-items">
+    <div class="col-sm-6">
+      Product
+    </div>
+
+    <div class="col-sm-3">
+      Quantity
+    </div>
+    <div class="col-sm-3 text-right">
+      Item Total
+    </div>
+  </div>
+{% for shipment in invoice.shipments %}
+  {% for item in shipment.shipmentItems %}
+    {{ partial('shop-purchased-items', {'invoice': invoice, 'item': item, }) }}
+  {% endfor %}
+{% endfor %}

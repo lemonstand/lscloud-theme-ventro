@@ -1,0 +1,28 @@
+<div class="col-md-12 items-holder">
+    {{ flash() }}
+    <div>
+        
+        {{ partial('shop-cart-items', {'edit_cart': true}) }}
+
+    </div>
+    
+</div>
+
+<div class="col-md-3 pull-right" id="summary">
+    <ul class="price-list list-group">
+        {% if totals.discountTotal > 0 %}
+            <li><span class="pull-left text-left">Discount:</span> {{ totals.discountTotal|currency }}</li>
+        {% endif %}
+        {% if totals.totalShippingQuote > 0 %}
+            <li><span class="pull-left text-left">Shipping:</span> {{ totals.totalShippingQuote|currency }}</li>
+        {% endif %}
+        <li><span class="pull-left text-left">Total:</span> {{ totals.total|currency }}</li>
+    </ul>
+    <input type="text" class="form-control input-sm" id="coupon-code" name="coupon" placeholder="Coupon Code" value="{{ coupon_code }}" />
+    <a class="btn btn-default col-xs-12 btn-lg solid" href="#" data-ajax-handler="shop:cart" id="update-cart" data-ajax-update="#cart-content=shop-cart-content, #mini-cart=shop-minicart, #navbar-totals=shop-minicart-totals">Update Cart <i class="fa fa-refresh"></i></a>
+    {% if customer %}
+    <a class="col-xs-12 btn btn-important solid btn-lg" href="{{ site_url('/checkout') }}">Checkout</a>
+    {% else %}
+    <a class="col-xs-12 btn btn-important solid btn-lg" href="{{ site_url('/checkout-start') }}">Checkout</a>
+    {% endif %}
+</div>

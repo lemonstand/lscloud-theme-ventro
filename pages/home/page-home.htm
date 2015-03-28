@@ -1,5 +1,6 @@
 ---
-template: default
+action: 'shop:products'
+template: home
 protocol: all
 published: true
 name: Ventro
@@ -10,37 +11,63 @@ url: /
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<h1>Ingridglow</h1>
-				<p>The new way to tell time</p>
-				<a href="/category/watches" class="btn btn-default">Shop Watches</a>
+				<h1>{{ theme.homeHeaderTitle }}</h1>
+				<p>{{ theme.homeHeaderSubtitle }}</p>
+				<a href="/category/{{ theme.homeHeaderButtonURL }}" class="btn btn-default">{{ theme.homeHeaderButtonTitle }}</a>
 			</div>
 		</div>
 	</div>
 </div>
 
-<div class="container-fluid home-categories">
-	<div class="col-md-4 home-box">
-		<img src="{{ '/images/box-health.jpg'|theme_resource }}" alt="">
-		<div class="home-box-content">
-			<h2>Track Health</h2>
-			<p>All the fitness trackers</p>
-			<a href="/category/fitness" class="btn btn-default">Shop Fitness</a>
+{% if theme.homeThreeCats == 1 %}
+	<div class="container-fluid home-categories">
+		<div class="col-md-4 home-box">
+			<img src="{{ theme.homeCatLeftImg.thumbnail('auto', 'auto') }}" alt="">
+			<div class="home-box-content">
+				<h2>Track Health</h2>
+				<p>All the fitness trackers</p>
+				<a href="/category/{{ theme.homeCatLeft }}" class="btn btn-default">Shop {{ theme.homeCatLeft }}</a>
+			</div>
+		</div>
+		<div class="col-md-4 home-box">
+			<img src="{{ theme.homeCatMiddleImg.thumbnail('auto', 'auto') }}" alt="">
+			<div class="home-box-content">
+				<h2>Save Time</h2>
+				<p>Tech for the fast-paced life</p>
+				<a href="/category/{{ theme.homeCatMiddle }}" class="btn btn-default">Shop {{ theme.homeCatMiddle }}</a>
+			</div>
+		</div>
+		<div class="col-md-4 home-box">
+			<img src="{{ theme.homeCatRightImg.thumbnail('auto', 'auto') }}" alt="">
+			<div class="home-box-content">
+				<h2>Home Care</h2>
+				<p>Comfort your life at home</p>
+				<a href="/category/{{ theme.homeCatRight }}" class="btn btn-default">Shop {{ theme.homeCatRight }}</a>
+			</div>
 		</div>
 	</div>
-	<div class="col-md-4 home-box">
-		<img src="{{ '/images/box-lifestyle.jpg'|theme_resource }}" alt="">
-		<div class="home-box-content">
-			<h2>Save Time</h2>
-			<p>Tech for the fast-paced life</p>
-			<a href="/category/lifestyle" class="btn btn-default">Shop Lifestyle</a>
-		</div>
+{% endif %}
+
+<div class="container-fluid home-features">
+	<div class="container">
+		<h2 class="text-center">Latest Products</h2>
+		{% set productCounter = 0 %}
+		{% for product in products.get()|extended_sort('created_at', false) %}
+			{% if productCounter < 4 %}
+				{{ partial('shop-grid-item', {'product': product}) }}
+			{% endif %}
+			{% set productCounter = productCounter + 1 %}
+		{% endfor %}
+	
+
 	</div>
-	<div class="col-md-4 home-box">
-		<img src="{{ '/images/box-home.jpg'|theme_resource }}" alt="">
-		<div class="home-box-content">
-			<h2>Home Care</h2>
-			<p>Comfort your life at home</p>
-			<a href="/category/home" class="btn btn-default">Shop Home</a>
-		</div>
+</div>
+{{ partial('newsletter') }}
+
+
+<div class="container-fluid home-features">
+	<div class="container">
+		<h2 class="text-center">Monthly Features</h2>
+		{{ partial('home-featured-products', {'monthly': 'monthly'|collection})}}
 	</div>
 </div>

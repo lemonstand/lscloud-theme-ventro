@@ -14,6 +14,12 @@ a:hover{
 	background:none;
 }
 
+.container{
+	padding: 0 15px;
+}
+button.btn-important{
+	width:100%;
+}
 // Sass imports
 @import "components/functions";
 @import "components/home";
@@ -21,3 +27,6 @@ a:hover{
 @import "components/button";
 @import "components/product";
 @import "components/shop";
+@import "components/pages";
+@import "components/cart";
+@import "components/checkout";

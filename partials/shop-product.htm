@@ -2,11 +2,24 @@
 <div class="container product-detail-top">
    <div class="row">
       <div class="col-md-7 row">
+          <!-- DESKTOP PRODUCTS -->
          <div class="col-md-2 product-gallery">
             {% for img in product.images %}
               <img src="{{ img.thumbnail('auto', 'auto') }}" onclick='changeImage("{{ img.thumbnail('auto', 'auto') }}")' alt="">
             {% endfor %}
          </div>
+
+         <!-- MOBILE PRODUCT SLIDER -->
+        <div class="col-md-12 banner" style="width:100%;">
+          <ul>
+          {% for image in product.images %}
+            <li style="list-style:none;">
+              <img src="{{ image.thumbnail('auto', 'auto') }}" alt="{{ product.name }}">
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+
          <div class="col-md-10 main-img">
             <img src="{{ product.images.first.thumbnail('auto','auto') }}" id="big-thumb" alt="">
          </div>
@@ -17,7 +30,7 @@
         <div class="col-md-12">
           <h1>{{ product.name }} <span>
             {% if on_sale %}
-              <small class="previous-price">{{ product.fullPrice|currency }}</small>
+              <small class="full-price">{{ product.fullPrice|currency }}</small>
             {% endif %}
             {{ product.price|currency }}</span>
           </h1>
@@ -38,6 +51,7 @@
         </div>
         
         {{ partial('shop-product-options') }}
+        {{ partial('shop-product-attributes') }}
         {{ partial('shop-product-extras') }}
 
         <div class="col-md-12">
