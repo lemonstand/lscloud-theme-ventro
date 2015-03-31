@@ -286,13 +286,13 @@ footer{
 	font-weight:700;
 	letter-spacing: 0.8px;
 	color: #333;
-	border-bottom: 2px solid rgba(51,51,51,0);
-	padding-bottom:3px;
+	border-bottom: 0px solid rgba(51,51,51,0);
+	padding-bottom:0px;
 	@include transition(0.1s);
 
 	&:hover{
-		padding-bottom:5px;
-		border-bottom: 2px solid rgba(51,51,51,1);
+		padding-bottom:0px;
+		border-bottom: 0px solid rgba(51,51,51,1);
 	}
 }
 
@@ -398,7 +398,7 @@ footer{
 
 #login-drop{
 	width:inherit;
-	max-width:400px;
+	max-width:100%;
 	left:initial;
 	right:0;
 	max-height:800px;

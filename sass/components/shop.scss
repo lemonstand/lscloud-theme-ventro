@@ -1,3 +1,4 @@
+@import "components/functions";
 .product-grid{
 	background:#f7f8f9;
 	padding:25px;
@@ -90,6 +91,7 @@
 	.product-button{
 		background:rgba(255,255,255,0.95);
 		opacity:1;
+		display:none;
 		pointer-events:none;
 		position:relative;
 		top:0;

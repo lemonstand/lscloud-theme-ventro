@@ -68,6 +68,7 @@
 		text-align: right;
 	}
 	.form-group{
+		margin-bottom:3px;
 		input{
 			border-radius:0;
 		}
@@ -93,6 +94,14 @@
 
 // ============================== MOBILE STYLES ==============================
 
+@media screen and (max-width: 768px) {
+	.newsletter h3{
+		text-align: center;
+	}
+	.home-feature .container .col-md-4{
+		text-align:left;
+	}
+}
 @media screen and (max-width: 480px) {
 
 .home-feature{
