@@ -9,6 +9,9 @@
 		img{
 			width:100%;
 			margin-bottom:10px;
+			&:hover{
+				cursor: pointer;
+			}
 		}
 	}
 	.main-img{
@@ -37,6 +40,7 @@
 		}
 		p{
 			color: #5d6266;
+			font-size:1.1em;
 		}
 		.title{
 			color:#656565;
@@ -98,7 +102,7 @@
 }
 
 .quantity, .input-sm{
-	border-radius:4px;
+	border-radius:0px;
 	background:white;
 	border:1px solid #ddd;
 	width:100%;
@@ -113,6 +117,10 @@
 	-moz-appearance:none;
 	margin-bottom:0;
 	box-shadow:none;
+}
+
+textarea.input-sm{
+	padding-top:10px;
 }
 
 .extra{
@@ -171,8 +179,54 @@
 
 .full-price{
 	text-decoration: line-through;
+	color: #acb1b4;
 }
 
+
+.success{
+  background: #333;
+  padding: 4px;
+  color: white!important;
+  font-style: italic;
+  text-transform: uppercase;
+
+}
+@keyframes fadeOut {
+    0% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+        display:none;
+    }
+}
+@-moz-keyframes fadeOut {
+    0% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+        display:none;
+    }
+}
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+        display:none;
+    }
+}
+@-o-keyframes fadeOut {
+    0% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+        display:none;
+    }
+}
 // ============================== MOBILE STYLES ==============================
 
 @media screen and (max-width: 480px) {

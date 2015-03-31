@@ -1,4 +1,16 @@
-{{ partial('newsletter') }}
+---
+description: 'Checkout Template'
+---
+<!DOCTYPE html> 
+<!--[if IE 8]> <html lang="en"> <![endif]--> 
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]--> 
+<head>
+    {{ partial('layout-head') }}
+</head> 
+<body>
+    {{ partial('layout-header')}}
+    {{ code_block('breadcrumbs') }}
+    {{ page() }} 
 
 <footer>
 	<div class="container">
@@ -46,7 +58,6 @@
 					<li><a href="{{ theme.socialInstagram }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
 					<li><a href="{{ theme.socialMedium }}" target="_blank"><i class="fa fa-medium"></i></a></li>
 				</ul>
-				<p>Powered by <a href="https://lemonstand.com" target="_blank">LemonStand</a></p>
 			</div>
 		</div>
 	</div>
@@ -61,14 +72,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="{{ 'js/ajaxchimp.min.js'|theme_resource }}"></script>
-<script src="{{ 'js/hammer.min.js'|theme_resource }}"></script>
-<script src="{{ 'js/slider.min.js'|theme_resource }}"></script>
 <script src="{{ 'js/main.js'|theme_resource }}"></script>
 <script src="{{ 'js/checkout.js'|theme_resource }}"></script>
 <script src="/cms/core.js"></script>
-
-<script type="text/javascript">
-	$('#mc-form').ajaxChimp({
-	    url: '{{ theme.ajaxChimp }}'
-	});
-</script>
+</body>
+</html>

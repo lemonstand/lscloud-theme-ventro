@@ -1,13 +1,13 @@
 ---
 action: 'shop:cart'
-template: default
+template: cart
 protocol: all
 published: true
 name: Cart
 url: /cart
 ---
 
-<div class="container">
+<div class="container cart-container">
 	<div class="row">
 		{% if cart.listitems|length %}
 	  {{ open_form({'class': 'custom'}) }}

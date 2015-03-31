@@ -1,6 +1,6 @@
 ---
 action: 'shop:login'
-template: default
+template: cart
 protocol: all
 published: true
 name: Checkout
@@ -12,7 +12,7 @@ url: /checkout-start
         <div class="sign-in-holder">
             <div class="content">
                 <div class="col-sm-6">
-                    <p id="title-p">Returning Customers</p>
+                    <h3 id="title-p">Returning Customers</h3>
                     {{ open_form({'data-ajax-handler': 'shop:onLogin', 'data-validation-message' : '', 'class' : 'form-horizontal' }) }}
 
                     <div class="form-group">
@@ -42,7 +42,7 @@ url: /checkout-start
                 </div>
                 <div class="col-xs-12 col-sm-4">
                     <form class="form-guest-checkout">
-                        <p id="title-p">Guest Checkout</p>
+                        <h3 id="title-p">Guest Checkout</h3>
                         <br>
                         <a href="{{ site_url('checkout') }}"><span class="btn btn-sm btn-important">Continue as a Guest</span></a>
                         <a class="btn btn-sm btn-link forgotpass" href="{{ site_url('login') }}"> Register</a>
