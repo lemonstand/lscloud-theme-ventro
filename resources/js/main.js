@@ -53,4 +53,14 @@ $('.banner').hammer().bind('swiperight', function() {
 $('.banner').hammer().bind('swipeleft', function() {
   unslider.data('unslider').next();
 });
+
+// reduce widht of dropdowns without .parent-cat
+$('.shop-drop').not(':has(.parent-cat)').css({
+    'left' : 'auto',
+    'right' : 'auto',
+    'width' : '120px'
+  });
+
+
 });
+
