@@ -236,10 +236,6 @@ textarea.input-sm{
   animation-duration: 1s;
 }
 
-
-
-
-
 @-webkit-keyframes zoomOut {
   0% {
     opacity: 1;
@@ -277,8 +273,8 @@ textarea.input-sm{
   animation-name: zoomOut;
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
-  -webkit-animation-delay: 5s; 
-  animation-delay: 5s;
+  -webkit-animation-delay: 4s; 
+  animation-delay: 4s;
   animation-fill-mode: forwards;
   -webkit-animation-fill-mode: forwards;
 

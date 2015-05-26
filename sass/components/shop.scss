@@ -82,7 +82,7 @@
 
 // ============================== MOBILE STYLES ==============================
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
 .product-grid{
 	background:#f7f8f9;
 	padding:25px;
@@ -95,7 +95,9 @@
 }
 
 .grid-item{
-
+	img:hover {
+		opacity: 1;
+	}
 	.product-button{
 		background:rgba(255,255,255,0.95);
 		opacity:1;
@@ -131,47 +133,3 @@
 	}
 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

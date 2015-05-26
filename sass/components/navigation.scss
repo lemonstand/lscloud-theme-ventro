@@ -68,6 +68,26 @@
 	margin:0 10px;
 }
 
+.cart-icon {
+	background-image: url('../images/shopping-cart.png'); 
+	background-repeat: no-repeat;
+	width: 26px;
+	height: 23px;
+	display: inline-block;
+}
+
+.cart-items {
+	font-size: 0.85em;
+	position: relative;
+	top: -20px;
+	color: #d63528;
+}
+
+#cart-totals:hover {
+	border-bottom: 0px solid white !important;
+
+}
+
 
 // ============================== breadcrumbs ==============================
 .product-breadcrumb{
