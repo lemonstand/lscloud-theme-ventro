@@ -21,7 +21,7 @@
 
 <style>
 
-.home-feature{
+.home-feature {
  	background: url({{ theme.homeHeaderImage.thumbnail('auto', 'auto') }} )no-repeat center right;
  	-webkit-background-size: cover;
   -moz-background-size: cover;
@@ -29,10 +29,17 @@
   background-size: cover;
 }
 
-
+@media screen and (max-width: 992px) {
+  .home-feature {
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  }
+}
 @media screen and (max-width: 480px) {
-	.home-feature{
-		background: white;
+	.home-feature {
+  -webkit-background-size: 90%;
+  background-size: 90%;
 	}
+  
 }
 </style>

@@ -14,7 +14,7 @@ customFields:
     ajaxChimp: { type: text, title: 'MailChimp campaign URL', default: 'http://blahblah.us1.list-manage.com/subscribe/post?u=5afsdhfuhdsiufdba6f8802&id=4djhfdsh9'}
     homeHeaderImage: { type: image, title: 'Home Header Image', default: '@/images/main-bg.jpg'}
     homeHeaderTitle: { type: text, title: 'Home Header Text', default: 'Ingridglow'}
-    homeHeaderSubtitle: { type: text, title: 'Home Header SubTitle', default: 'The new way to tell time'}
+    homeHeaderSubtitle: { type: text, title: 'Home Header SubTitle', default: 'The new way to tell time.'}
     homeHeaderButtonURL: { type: text, title: 'Home Header category url name', default: 'watches', comment: 'Make sure the URL name is exactly the category Url name'}
     homeHeaderButtonTitle: { type: text, title: 'Home Header Button Text', default: 'Shop Watches'}
     homeThreeCats: { type: checkbox, title: 'Home Page 3 Category Blocks', default: '1', comment: 'Check to show' }

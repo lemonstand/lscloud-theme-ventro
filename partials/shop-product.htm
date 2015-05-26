@@ -55,8 +55,8 @@
         {{ partial('shop-product-extras') }}
 
         <div class="col-md-12">
+          <a class="btn btn-important add-to-cart" data-ajax-handler="shop:onAddToCart" data-ajax-update="#product-page=shop-product, #mini-cart=shop-minicart, #cart-totals=shop-minicart-totals" >Add to Cart </a>
           {{ flash() }}
-          <a class="btn btn-important" data-ajax-handler="shop:onAddToCart" data-ajax-update="#product-page=shop-product, #mini-cart=shop-minicart, #cart-totals=shop-minicart-totals" >Add to Cart </a>
         </div>
         
 

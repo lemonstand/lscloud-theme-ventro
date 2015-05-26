@@ -54,12 +54,59 @@ $('.banner').hammer().bind('swipeleft', function() {
   unslider.data('unslider').next();
 });
 
-// reduce widht of dropdowns without .parent-cat
-$('.shop-drop').not(':has(.parent-cat)').css({
-    'left' : 'auto',
-    'right' : 'auto',
-    'width' : '120px'
-  });
+    
+    // Move Login and Cart to top of nav on mobile
+    $('.navbar-right').prependTo('.navbar-collapse');
+
+    // Hover on product grid
+    $( '.product-button'  )
+      .mouseenter(function() {
+        $(this).siblings().css({
+            'opacity':'.33'
+        });
+      })
+      .mouseleave(function() {
+        $(this).siblings().css({
+            'opacity':'1'
+        });
+      });
+
+    // animate falsh message ('add to cart') off screen.  
+    $( document ).ajaxSuccess(function( event, request, settings ) {
+        if ( $( '.success' ).length ) {
+            $( '.success' ).addClass( 'pulse' );
+            setTimeout(function() { 
+                $( '.success' ).addClass( 'zoomOut' );
+            }, 2000);
+            $( '.main-img' ).zoom();
+        }
+    });
+
+    $( '.main-img' ).zoom();
+
+    // Show text over featured images on scroll (mobile)
+    function windowWidth() {
+      var windowWidth    = $(window).width(); 
+      return windowWidth; 
+    }
+
+    $(window).resize(function() {
+        if (windowWidth() > 768) {
+            $('.home-box-content').show();
+        }
+    });
+
+    $(window).scroll(function() {
+        var scrollTop     = $(window).scrollTop(),
+            elementOffset = $('.home-box').offset().top,
+            distance      = (elementOffset - scrollTop);
+        if (distance <= 200 && windowWidth() <= 768) {
+            $('.home-box-content').show();
+        }
+        if(!$(window).scrollTop() && windowWidth() <= 768) { 
+            $('.home-box-content').hide();
+        }         
+    }); // END
 
 
 });
