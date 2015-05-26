@@ -39,8 +39,19 @@
           <p>{{ product.description|unescape }}</p>
         </div>
 <!-- ============================= Product Quantity -->
-{% if not product.isOutOfStock() or product.allow_preorder %}      
-        <div class="col-md-6">
+{% if not product.isOutOfStock() or product.allow_preorder %} 
+        
+      <div class="attribute-group">   
+        {{ partial('shop-product-options') }}
+      </div>
+      <div class="attribute-group">
+        {{ partial('shop-product-attributes') }}
+      </div>
+      <div class="attribute-group">
+        {{ partial('shop-product-extras') }}
+      </div>
+
+        <div class="col-md-12 attribute-group">
           <input type="hidden" name="productId" value="{{ product.id }}"/>
           <div class="add-cart-holder form-group">
             <div class="quantity-selector">
@@ -48,16 +59,16 @@
               <input class="form-control quantity" type="text" value="{{ quantity|default("1") }}" name="quantity"/>
             </div>
           </div>
-        </div>
-        
-        {{ partial('shop-product-options') }}
-        {{ partial('shop-product-attributes') }}
-        {{ partial('shop-product-extras') }}
-
-        <div class="col-md-12">
+          <div class="add-to-cart-div">
           <a class="btn btn-important add-to-cart" data-ajax-handler="shop:onAddToCart" data-ajax-update="#product-page=shop-product, #mini-cart=shop-minicart, #cart-totals=shop-minicart-totals" >Add to Cart </a>
+          
+        </div>
+        </div>
+      
+        <div class="col-md-12">
           {{ flash() }}
         </div>
+
         
 
 
@@ -105,7 +116,7 @@
 
   <div class="col-md-6 facebook">
     {% if theme.fbCommentsAppIDText > 0 %} <!-- if Facebook App ID is entered, display comments -->
-      <h4 class="text-center">Hallo?</h4>
+      <h4 class="text-center"></h4>
       <!-- Product Reviews -->
       <div class="col-md-12">
         <div id="fb-root">
@@ -128,18 +139,7 @@
     {% endif %}
   </div>
 
-
-
-
-
-
-
-
 </div>
-
-
-
-
 
 <script type="text/javascript">
   function changeImage(a) {

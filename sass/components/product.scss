@@ -166,8 +166,6 @@ textarea.input-sm{
 	}
 }
 
-
-
 .chzn-select{
 	box-shadow: none;
 	border-radius:4px;
@@ -176,13 +174,40 @@ textarea.input-sm{
 	height: 43px;
 }
 
-
-
 .full-price{
 	text-decoration: line-through;
 	color: #acb1b4;
 }
 
+
+.add-cart-holder.form-group {
+  float: left;
+  width: 45%;
+  height: 100px;
+
+}
+.attribute-group {
+  width: 100%;
+}
+
+.add-to-cart-div {
+  padding-top: 58px;
+  margin-left: 50%;
+  height: 100px;
+
+}
+.add-to-cart {
+  height: 42px !important;
+}
+
+.product-options {
+  clear: both;
+}
+
+.select-option {
+  width: 98% !important;
+  height: 42px;
+}
 
 .success{
   background: #333;
@@ -282,8 +307,25 @@ textarea.input-sm{
 
 
 // ============================== MOBILE STYLES ==============================
-
+@media screen and (max-width: 768px) {
+  .select-option {
+    width: 100% !important;
+  }
+}
 @media screen and (max-width: 480px) {
+
+  .add-cart-holder.form-group {
+    float: none;
+    width: 100%;
+  }
+
+  .add-to-cart-div {
+    padding-top: 28px;
+    margin-left: 0;
+    height: 100px;
+    width: 100%
+  }
+
 .product-detail-top{
 	margin-top: 75px;
 	margin-bottom: 75px;
