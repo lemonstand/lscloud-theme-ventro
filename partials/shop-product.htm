@@ -84,18 +84,22 @@
 </div>
 
 <div class="container product-detail-bottom">
+  {% if product.width or product.materials or product.details %}
   <h1>
     Product Specs and Details
   </h1>
   <div class="col-md-6 spec-row">
-    <div class="col-md-12">
-      <div class="col-md-5">
-        <h4>Dimensions</h4>
+    {% if product.width %}
+      <div class="col-md-12">
+        <div class="col-md-5">
+          <h4>Dimensions</h4>
+        </div>
+        <div class="col-md-7 text-right">
+          <p>{{ product.width }} x {{ product.height }} x {{ product.depth }}</p>
+        </div>
       </div>
-      <div class="col-md-7 text-right">
-        <p>{{ product.width }} x {{ product.height }} x {{ product.depth }}</p>
-      </div>
-    </div>
+    {% endif %}
+    {% if product.materials %}
     <div class="col-md-12">
       <div class="col-md-5">
         <h4>Materials</h4>
@@ -104,6 +108,8 @@
         <p>{{ product.materials|unescape}}</p>
       </div>
     </div>
+    {% endif %}
+    {% if product.details %}
     <div class="col-md-12">
       <div class="col-md-5">
         <h4>Details</h4>
@@ -112,6 +118,7 @@
         <p>{{ product.details|unescape}}</p>
       </div>
     </div>
+    {% endif %}
   </div>
 
   <div class="col-md-6 facebook">
@@ -138,7 +145,7 @@
       <!-- End class="product-reviews" -->
     {% endif %}
   </div>
-
+  {% endif %}
 </div>
 
 <script type="text/javascript">
