@@ -5,6 +5,7 @@ website: 'http://dparkd.com'
 engine: twig
 404: '404'
 customFields:
+    logoImage: { type: image, title: 'Global: Logo Image', default: '@/images/logo.jpg'}
     title: { type: text, title: 'title of your store', default: 'Ventro'}
     fbCommentsAppIDText: { type: text, title: 'Facebook Comments App ID', default: '123', comment: 'For Facebook product reviews/comments to work, first create an app in Facebook, then paste in your app ID.' }
     socialFacebook: { type: text, title: 'Facebook URL', default: 'https://www.facebook.com/lemonstand'}

@@ -16,7 +16,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Ventro</a>
+      <a class="navbar-brand" href="{{ site_url('/') }}">{{ theme.title }}</a>
+
+      <!-- logo in the header  -->
+      <a class="navbar-logo" href="{{ site_url('/') }}"><img src="{{ theme.logoImage.thumbnail('auto','auto') }}" alt="Ventro Store Logo"/></a>
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

@@ -85,7 +85,10 @@
 
 #cart-totals:hover {
 	border-bottom: 0px solid white !important;
+}
 
+.navbar-brand {
+	display: none;
 }
 
 
@@ -287,7 +290,15 @@ footer{
 
 // ============================== MOBILE STYLES ==============================
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
+
+	.navbar-logo {
+		display: none;
+	}
+
+	.navbar-brand {
+		display: inline;
+	}
 
 	.navbar{
 		border-radius:0;

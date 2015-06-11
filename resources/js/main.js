@@ -73,10 +73,12 @@ $('.banner').hammer().bind('swipeleft', function() {
 
     // animate falsh message ('add to cart') off screen.  
     $( document ).ajaxSuccess(function( event, request, settings ) {
-        if ( $( '.success' ).length ) {
-            $( '.success' ).addClass( 'pulse' );
+        if ( $( '.to-cart-flash > .success' ).length ) {
+            var customeMsg = $( '.custome-msg' ).text();
+            $( '.to-cart-flash > .success' ).addClass( 'pulse' );
+            $( '.to-cart-flash > .success' ).text(customeMsg);
             setTimeout(function() { 
-                $( '.success' ).addClass( 'zoomOut' );
+                $( '.to-cart-flash > .success' ).addClass( 'zoomOut' );
             }, 2000);
             $( '.main-img' ).zoom();
         }
