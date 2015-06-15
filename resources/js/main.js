@@ -110,6 +110,7 @@ $('.banner').hammer().bind('swipeleft', function() {
         }         
     }); // END
 
+        
 
 });
 

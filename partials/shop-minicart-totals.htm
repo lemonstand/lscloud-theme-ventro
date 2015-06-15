@@ -1,4 +1,8 @@
 <span id="navbar-totals">
   <span class="cart-icon"></span>
-  <span class="cart-items">{{ cart.getItemNum() }}</span>
+  <span class="cart-items">
+    {% if cart.getItemNum() > 0 %}
+    {{ cart.getItemNum() }}
+    {% endif %}
+  </span>
 </span>

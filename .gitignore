@@ -1,0 +1,6 @@
+# System files
+.DS_Store
+desktop.ini
+Thumbs.db
+.sass-cache
+*.cfg

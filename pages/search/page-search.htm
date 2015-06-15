@@ -1,0 +1,27 @@
+---
+action: 'shop:search'
+template: home
+protocol: all
+published: true
+name: Search
+url: /search
+---
+<div class="container-fluid product-grid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p>Products found: {{ products.get().count() }}</p>
+      </div>
+      <div class="col-md-12">
+        {% set productCounter = 0 %}
+        {% for product in products.get()|extended_sort('created_at', false) %}
+          {% if productCounter < products.get().count() %}
+            {{ partial('shop-grid-item', {'product': product}) }}
+          {% endif %}
+          {% set productCounter = productCounter + 1 %}
+        {% endfor %}
+        
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,7 @@
     {% endset %}
   {% elseif step == 'shipping_method' %}
     {% set inputs %}
+    <input  style="display:none"  type="text" name="orderNotes" value="{{ orderNotes }}"/>
       <input type="hidden" name="step" value="shipping_method">
       <input type="hidden" name="nextStep" value="pay"/>
     {% endset %}
