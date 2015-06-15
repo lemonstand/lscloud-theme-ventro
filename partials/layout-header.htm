@@ -81,10 +81,10 @@
           </ul>
         </li>
         <li class="dropdown yamm-fw login-drop" >
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Search</a>
+          <a href="#" class="search-botton dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Search</a>
           <ul class="dropdown-menu shop-drop">
             {{ open_form({'class': 'search', 'method': 'get', 'action': site_url('search')}) }}
-              <input type="text" name="query" value="{{query|unescape}}" placeholder="Search store&hellip;"/>
+              <input class="search-box" type="text" name="query" value="{{query|unescape}}" placeholder="Search store&hellip;"/>
             {{ close_form() }}
           </ul>
           

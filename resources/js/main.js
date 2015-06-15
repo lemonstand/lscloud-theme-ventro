@@ -58,6 +58,10 @@ $('.banner').hammer().bind('swipeleft', function() {
     // Move Login and Cart to top of nav on mobile
     $('.navbar-right').prependTo('.navbar-collapse');
 
+    $( document ).ajaxComplete(function() {
+       $(".search-box").focus();
+     }
+
     // Hover on product grid
     $( '.product-button'  )
       .mouseenter(function() {
