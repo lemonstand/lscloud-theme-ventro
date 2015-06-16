@@ -34,6 +34,7 @@
 }));
 
 $(window).load(function() {
+    
   var unslider = $('.banner').unslider({
         fluid: true,
         dots: true,
@@ -57,10 +58,6 @@ $('.banner').hammer().bind('swipeleft', function() {
     
     // Move Login and Cart to top of nav on mobile
     $('.navbar-right').prependTo('.navbar-collapse');
-
-    $( document ).ajaxComplete(function() {
-       $(".search-box").focus();
-     }
 
     // Hover on product grid
     $( '.product-button'  )
@@ -108,9 +105,19 @@ $('.banner').hammer().bind('swipeleft', function() {
             distance      = (elementOffset - scrollTop);
         if (distance <= 200 && windowWidth() <= 768) {
             $('.home-box-content').show();
+
+            if ( !$('nav').addClass('nav-mobile') ) {
+                $('nav').hide();
+                $('nav').addClass('nav-mobile');
+                $('nav').fadeIn();
+            }
+            
         }
         if(!$(window).scrollTop() && windowWidth() <= 768) { 
             $('.home-box-content').hide();
+            $('nav').hide();
+            $('nav').removeClass('nav-mobile');
+            $('nav').show();
         }         
     }); // END
 

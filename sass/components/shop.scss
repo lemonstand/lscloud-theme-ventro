@@ -11,6 +11,7 @@
 }
 
 .grid-item{
+	width: 25%;
 	padding:20px;
 	background: white;
 	background-clip: padding-box;
@@ -95,6 +96,7 @@
 }
 
 .grid-item{
+	width: 50%;
 	img:hover {
 		opacity: 1;
 	}
@@ -132,4 +134,10 @@
 		padding-bottom:0;
 	}
 }
+}
+
+@media screen and (max-width: 590px) {
+	.grid-item {
+		width: 100%;
+	}
 }

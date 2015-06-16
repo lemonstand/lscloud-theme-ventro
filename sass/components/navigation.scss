@@ -305,12 +305,16 @@ footer{
 
 @media screen and (max-width: 767px) {
 
-	nav {
+
+	.nav-mobile {
 		position: fixed !important;
 		padding: 0 !important;
+	}
+	nav {
 		.search-box {
 			margin: 5px 10px;
 			border: 1px solid #ccc;
+			width: 95% !important;
 		}
 	}
 	.navbar-logo {
@@ -349,7 +353,7 @@ footer{
 		padding: 20px 0;
 		background: white;
 		border-bottom:0; 
-		margin-bottom:0;
+		// margin-bottom:0;
 
 		.dropdown{
 			a{
