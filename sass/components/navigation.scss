@@ -306,6 +306,8 @@ footer{
 @media screen and (max-width: 767px) {
 
 	nav {
+		position: fixed !important;
+		padding: 0 !important;
 		.search-box {
 			margin: 5px 10px;
 			border: 1px solid #ccc;
