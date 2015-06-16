@@ -122,6 +122,16 @@
     {% endif %}
   </div>
 {% endif %}
+
+  {% if product.related.count %}
+  <div class="col-md-12">
+    <h1>Related products</h1>
+    {% for product in product.related %}
+      {{ partial('shop-grid-item', {'product': product}) }}
+    {% endfor %}
+    {% endif %}
+  </div>
+  
   <div class="col-md-6 facebook">
     {% if theme.fbCommentsAppIDText > 0 %} <!-- if Facebook App ID is entered, display comments -->
       <h4 class="text-center"></h4>
