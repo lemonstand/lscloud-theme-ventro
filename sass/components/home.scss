@@ -79,8 +79,7 @@
 	}
 	.btn{
 		margin-top:0;
-		width:20%;
-		margin-left:20px;
+
 	}
 }
 
@@ -97,6 +96,7 @@
 @media screen and (max-width: 768px) {
 	.newsletter h3{
 		text-align: center;
+		margin-bottom: 40px;
 	}
 	.home-feature .container .col-md-4{
 		text-align:left;
@@ -216,6 +216,8 @@
 		margin-top:10px;
 		padding-bottom:15px;
 		text-align: center;
+		margin-bottom: 5px;
+
 	}
 	.form-group{
 		input{
