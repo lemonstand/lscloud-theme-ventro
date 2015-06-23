@@ -4,21 +4,6 @@ var windowBack = true;
 
 $(document).ready(function() {
 
-  $('#checkout-page').on('change', element, function() {
-    for (var i = 0; i < optionsLength; i++) {
-      if ( $(element[i]).is(':checked') ) {
-        $("input[name='orderNotes']").val("StorePickup");
-        alert('blah');
-        return;
-      } else {
-        $("input[name='orderNotes']").val("");
-      }
-    }
-    
-  });
-
-    
-
 //DROP DOWN MENU
 $('.dropdown-text').click(function() {
   $('.dropdown-content').toggleClass('dropdown-show');
