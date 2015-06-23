@@ -59,19 +59,6 @@ $('.banner').hammer().bind('swipeleft', function() {
     // Move Login and Cart to top of nav on mobile
     $('.navbar-right').prependTo('.navbar-collapse');
 
-    // Hover on product grid
-    $( '.product-button'  )
-      .mouseenter(function() {
-        $(this).siblings().css({
-            'opacity':'.33'
-        });
-      })
-      .mouseleave(function() {
-        $(this).siblings().css({
-            'opacity':'1'
-        });
-      });
-
     // animate falsh message ('add to cart') off screen.  
     $( document ).ajaxSuccess(function( event, request, settings ) {
         if ( $( '.to-cart-flash > .success' ).length ) {
@@ -81,11 +68,9 @@ $('.banner').hammer().bind('swipeleft', function() {
             setTimeout(function() { 
                 $( '.to-cart-flash > .success' ).addClass( 'zoomOut' );
             }, 2000);
-            $( '.main-img' ).zoom();
         }
     });
 
-    $( '.main-img' ).zoom();
 
     // Show text over featured images on scroll (mobile)
     function windowWidth() {
@@ -121,7 +106,4 @@ $('.banner').hammer().bind('swipeleft', function() {
         }         
     }); // END
 
-        
-
 });
-

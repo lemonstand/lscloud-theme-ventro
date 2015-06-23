@@ -4,21 +4,17 @@ var windowBack = true;
 
 $(document).ready(function() {
 
-  var element;
-
-  $('#checkout-page').on('DOMNodeInserted', function() {
-    element = $('[type="radio"]').eq(0); 
-    if ( !$(element).is(':checked') ) {
-      $("input[name='orderNotes']").val('');
-    }
-  });
-
   $('#checkout-page').on('change', element, function() {
-    if ( $(element).is(':checked') ) {
-      $("input[name='orderNotes']").val("Store Pickup");
-    } else {
-      $("input[name='orderNotes']").val("");
+    for (var i = 0; i < optionsLength; i++) {
+      if ( $(element[i]).is(':checked') ) {
+        $("input[name='orderNotes']").val("StorePickup");
+        alert('blah');
+        return;
+      } else {
+        $("input[name='orderNotes']").val("");
+      }
     }
+    
   });
 
     

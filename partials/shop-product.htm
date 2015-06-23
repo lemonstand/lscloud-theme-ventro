@@ -11,22 +11,22 @@
 
          <!-- MOBILE PRODUCT SLIDER -->
         <div class="col-md-12 banner" style="width:100%;">
-          <!-- <ul>
+          <ul>
           {% for image in product.images %}
             <li style="list-style:none;">
               <img src="{{ image.thumbnail('auto', 'auto') }}" alt="{{ product.name }}">
             </li>
           {% endfor %}
           </ul>
-        </div> -->
+        </div>
 
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
           <!-- Indicators -->
-          <ol class="carousel-indicators">
+          <!-- <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-          </ol>
+          </ol> -->
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
@@ -43,9 +43,6 @@
                 
               {% endfor %}
             {% endif %}
-            <!-- <div class="item active">
-              <img src="{{ image.thumbnail('auto', 'auto') }}" alt="{{ product.name }}" alt="..."> 
-            </div> -->
             
             
           </div>
@@ -62,7 +59,7 @@
         </div>
 
          <div class="col-md-10 main-img">
-            <img src="{{ product.images.first.thumbnail('auto','auto') }}" id="big-thumb" alt="">
+              <img src="{{ product.images.first.thumbnail('auto','auto') }}" id="big-thumb" alt="" >            
          </div>
       </div>
 
