@@ -1,1 +1,8 @@
-<span id="navbar-totals">{{ cart.getItemNum() }} Item{{ cart.getItemNum == 0 or cart.getItemNum > 1 ? 's' : null }}</span>
+<span id="navbar-totals">
+  <span class="cart-icon"></span>
+  <span class="cart-items">
+    {% if cart.getItemNum() > 0 %}
+    {{ cart.getItemNum() }}
+    {% endif %}
+  </span>
+</span>

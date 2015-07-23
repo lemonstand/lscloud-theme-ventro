@@ -1,4 +1,7 @@
 @import "components/functions";
+#mini-cart {
+	margin: 25px !important;
+}
 .promotion-bar{
 	position:relative;
 	background:#333;
@@ -68,6 +71,39 @@
 	margin:0 10px;
 }
 
+.cart-icon {
+	background-image: url('../images/shopping-cart.png'); 
+	background-repeat: no-repeat;
+	width: 26px;
+	height: 23px;
+	display: inline-block;
+}
+
+.cart-items {
+	font-size: 0.85em;
+	position: relative;
+	top: -20px;
+	color: #d63528;
+}
+
+#cart-totals:hover {
+	border-bottom: 0px solid white !important;
+}
+
+.navbar-brand {
+	display: none;
+}
+
+nav {
+	.search-box {
+		width: 100%;
+		margin: 0;
+		height: 60px;
+		border: none;
+		font-size: 24px;
+		padding-left: 5px;
+	}
+}
 
 // ============================== breadcrumbs ==============================
 .product-breadcrumb{
@@ -96,7 +132,7 @@
 }
 
 // ============================== Shop drop ==============================
-.yamm-fw .shop-drop{
+.yamm-fw .shop-drop {
 	display:block;
 	opacity:0;
 	pointer-events:none;
@@ -105,13 +141,14 @@
 }
 
 
-.open .shop-drop{
+.open .shop-drop {
 	opacity:1;
 	pointer-events:auto;
 	top:70px;
 }
 
-.shop-drop{
+.shop-drop {
+	padding: 0;
 	width:100%;
 	max-height:600px;
 	position:absolute;
@@ -163,6 +200,12 @@
 	}
 }
 
+.default-drop {
+	width: 200px;
+	left: auto !important;
+	right: auto !important;
+}
+
 #login-drop{
 	width:400px;
 	left:initial;
@@ -182,6 +225,8 @@
 	padding-left:0;
 	font-weight:400;
 }
+
+
 
 
 
@@ -261,280 +306,300 @@ footer{
 
 // ============================== MOBILE STYLES ==============================
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 
-.navbar{
-	border-radius:0;
-	border:0;
-	z-index:999;
-}
 
-.navbar-default{
-	width:100%;
-	left:0;
-	padding: 20px 0;
-	background: white;
-	border-bottom:0; 
-	margin-bottom:0;
-
-	.dropdown{
-		a{
-			font-weight:700;
-			letter-spacing: 1px;
-			font-size:0.9em;
-			color: #333;
+	.nav-mobile {
+		position: fixed !important;
+		padding: 0 !important;
+	}
+	nav {
+		.search-box {
+			margin: 5px 10px;
+			border: 1px solid #ccc;
+			width: 95% !important;
 		}
 	}
-}
-.navbar-right{
-	margin-top:0;
-}
-
-.navbar-default .navbar-nav>li>a{
-	text-transform: uppercase;
-	font-weight:700;
-	letter-spacing: 0.8px;
-	color: #333;
-	border-bottom: 0px solid rgba(51,51,51,0);
-	padding-bottom:0px;
-	@include transition(0.1s);
-
-	&:hover{
-		padding-bottom:0px;
-		border-bottom: 0px solid rgba(51,51,51,1);
+	.navbar-logo {
+		display: none;
 	}
-}
 
-.navbar-nav>li{
-	margin:0 10px;
-}
-
-
-// ============================== breadcrumbs ==============================
-.product-breadcrumb{
-	width:100%;
-	background: #FAFAFA;
-	border-top:1px solid #DEDEDE;
-	border-bottom:1px solid #DEDEDE;
-	h4{
-		margin:12px 0;
+	.navbar-brand {
+		display: inline;
 	}
-	a, span{
-		color: rgb(93, 98, 102);
-		font-size: 0.7em;
-		font-weight:600;
-		text-transform: uppercase;
+
+	.navbar{
+		border-radius:0;
+		border:0;
+		z-index:999;
 	}
-	a{
-		color: rgb(93, 98, 102);
+
+	.navbar-collapse.collapse.in, .navbar-collapse.collapsing{
+		position: absolute;
+		width: 100%;
+		background-color: #fff;
+		margin: 0 15px 0 -15px;
 	}
-	span{
-		padding:0 15px; 
-		font-size: 0.7em;
-		color:#DEE1E5;
+
+	.navbar-collapse.collapse.in {
+		min-height: 200px !important;
+		overflow: hidden;
 	}
-	
-}
 
-// ============================== Shop drop ==============================
-.yamm-fw .shop-drop{
-	display:block;
-	opacity:0;
-	pointer-events:none;
-	top:60px;
-	@include transition(0s);
-}
-
-
-.open .shop-drop{
-	opacity:1;
-	pointer-events:auto;
-	top:0px;
-}
-
-.shop-drop{
-	width:100%;
-	max-height:600px;
-	position:absolute;
-	left:0;
-	top:0px;
-	background:white;
-	z-index:899;
-	opacity:1;
-	pointer-events:none;
-
-	@include transition(0s);
-	ul{
-		list-style:none;
-		padding-left:0;
+	.navbar-collapse.collapsing {
+		max-height: 200px !important;
 	}
-	.cat-box{
-		display:inline-block;
-		padding:0%;
-		width:50%;
-		float:left; 
-		vertical-align: top;
-		a{
-			color: #333;
-			@include transition(0s);
-			&:hover {
-				color: #acb1b4;
+
+	.navbar-default{
+		width:100%;
+		left:0;
+		padding: 20px 0;
+		background: white;
+		border-bottom:0; 
+		// margin-bottom:0;
+
+		.dropdown{
+			a{
+				font-weight:700;
+				letter-spacing: 1px;
+				font-size:0.9em;
+				color: #333;
 			}
 		}
-		li{
-			padding-bottom:10px;
+	}
+	.navbar-right{
+		margin-top:0;
+	}
+
+	.navbar-default .navbar-nav>li>a{
+		text-transform: uppercase;
+		font-weight:700;
+		letter-spacing: 0.8px;
+		color: #333;
+		border-bottom: 0px solid rgba(51,51,51,0);
+		padding-bottom:0px;
+		@include transition(0.1s);
+
+		&:hover{
+			padding-bottom:0px;
+			border-bottom: 0px solid rgba(51,51,51,1);
 		}
-		.parent-cat{
-			font-weight:700;
-			padding-bottom:10px;
-			font-size:0.9em;
-			letter-spacing: 1px;
-			margin-bottom:20px;
-			border-bottom:1px solid #f1f1f1;
+	}
+
+	.navbar-nav>li{
+		margin:0 10px;
+	}
+
+
+	// ============================== breadcrumbs ==============================
+	.product-breadcrumb{
+		width:100%;
+		background: #FAFAFA;
+		border-top:1px solid #DEDEDE;
+		border-bottom:1px solid #DEDEDE;
+		h4{
+			margin:12px 0;
+		}
+		a, span{
+			color: rgb(93, 98, 102);
+			font-size: 0.7em;
+			font-weight:600;
 			text-transform: uppercase;
+		}
+		a{
+			color: rgb(93, 98, 102);
+		}
+		span{
+			padding:0 15px; 
+			font-size: 0.7em;
+			color:#DEE1E5;
+		}
+		
+	}
 
-			@include transition(0s);
+	// ============================== Shop drop ==============================
+	.yamm-fw .shop-drop{
+		display:block;
+		opacity:0;
+		pointer-events:none;
+		top:60px;
+		@include transition(0s);
+	}
 
-			&:hover{
-				border-bottom:1px solid #333;
-				a{
-					color: #5d6266;
+
+	.open .shop-drop{
+		opacity:1;
+		pointer-events:auto;
+		top:0px;
+	}
+
+	.shop-drop{
+		width:100%;
+		max-height:600px;
+		position:absolute;
+		left:0;
+		top:0px;
+		background:white;
+		z-index:899;
+		opacity:1;
+		pointer-events:none;
+
+		@include transition(0s);
+		ul{
+			list-style:none;
+			padding-left:0;
+		}
+		.cat-box ul li {
+			&:last-child {
+				padding-bottom: 25px;
+			}
+			a {
+				padding-left: 15px;
+			}
+		}
+		.cat-box{
+			display:inline-block;
+			padding:0%;
+			width:50%;
+			/*float:left; */
+			vertical-align: top;
+			a{
+				color: #333;
+				@include transition(0s);
+				&:hover {
+					color: #acb1b4;
+				}
+			}
+			li{
+				padding-bottom:10px;
+			}
+			.parent-cat{
+				font-weight:700;
+				padding-bottom:10px;
+				font-size:0.9em;
+				letter-spacing: 1px;
+				margin-bottom: 5px;
+				border-bottom:1px solid #f1f1f1;
+				text-transform: uppercase;
+
+				@include transition(0s);
+
+				&:hover{
+					border-bottom:1px solid #333;
+					a{
+						color: #5d6266;
+					}
 				}
 			}
 		}
 	}
-}
 
-#login-drop{
-	width:inherit;
-	max-width:100%;
-	left:initial;
-	right:0;
-	max-height:800px;
-	.input-sm{
-		padding:15px 10px;
-	}
-	.btn-important{
-		font-size:1em;
-		width:100%;
-		color: white;
-	}
-}
-
-.forgotpass{
-	padding-left:0;
-	font-weight:400;
-}
-
-
-
-// ============================== Footer ==============================
-footer{
-	padding:70px 0px;
-	background:#2F2F2F;
-	ul{
-		list-style: none;
-		li{
-			padding-bottom:15px;
+	#login-drop{
+		width:inherit;
+		max-width:100%;
+		left:initial;
+		right:0;
+		max-height:800px;
+		.input-sm{
+			padding:15px 10px;
 		}
-	}
-	li a{
-		font-weight:400;
-		font-size:1.1em;
-		color: #D1D1D1;
-		&:hover{
-			color: #d1d1d1;
-		}
-	}
-	.head{
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		color: white;
-		font-weight:600;
-		padding-bottom:20px;
-	}
-
-	.social-foot{
-		padding-top:50px;
-		h5{
+		.btn-important{
+			font-size:1em;
+			width:100%;
 			color: white;
-			font-weight: 600;
-			font-size: 1.1em;
-			letter-spacing: 1px;
 		}
+	}
+
+	.forgotpass{
+		padding-left:0;
+		font-weight:400;
+	}
+
+
+
+	// ============================== Footer ==============================
+	footer{
+		padding:70px 0px;
+		background:#2F2F2F;
 		ul{
 			list-style: none;
-			margin: 0 auto;
-			padding-left:0;
-			display:inline-block;
 			li{
+				padding-bottom:15px;
+			}
+		}
+		li a{
+			font-weight:400;
+			font-size:1.1em;
+			color: #D1D1D1;
+			&:hover{
+				color: #d1d1d1;
+			}
+		}
+		.head{
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: white;
+			font-weight:600;
+			padding-bottom:20px;
+		}
+
+		.social-foot{
+			padding-top:50px;
+			h5{
+				color: white;
+				font-weight: 600;
+				font-size: 1.1em;
+				letter-spacing: 1px;
+			}
+			ul{
+				list-style: none;
+				margin: 0 auto;
+				padding-left:0;
 				display:inline-block;
-				float:left;
-				padding: 20px;
-				i{
-					font-size:1.3em;
-					color: white;
-				}
-				a:hover i{
-					color: #d1d1d1;
+				li{
+					display:inline-block;
+					float:left;
+					padding: 20px;
+					i{
+						font-size:1.3em;
+						color: white;
+					}
+					a:hover i{
+						color: #d1d1d1;
+					}
 				}
 			}
 		}
 	}
+
+	#loading-indicator {
+	    position: fixed;
+	    width: 100%;
+	    top: 0;
+	    left: 0;
+	    z-index: 99999;
+	}
 }
 
-#loading-indicator {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 99999;
+@media screen and (max-width: 480px) {
+
+	// ============================== breadcrumbs ==============================
+	.product-breadcrumb{
+		width:100%;
+		background: #FAFAFA;
+		border-top:1px solid #DEDEDE;
+		border-bottom:1px solid #DEDEDE;
+		h4{
+			margin:12px 0;
+		}
+		a, span{
+			color: rgb(93, 98, 102);
+			font-size: 0.6em;
+			font-weight:600;
+			text-transform: uppercase;
+		}
+		span{
+			padding:0 5px; 
+		}
+	}
 }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

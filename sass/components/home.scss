@@ -79,8 +79,7 @@
 	}
 	.btn{
 		margin-top:0;
-		width:20%;
-		margin-left:20px;
+
 	}
 }
 
@@ -97,75 +96,115 @@
 @media screen and (max-width: 768px) {
 	.newsletter h3{
 		text-align: center;
+		margin-bottom: 40px;
 	}
 	.home-feature .container .col-md-4{
 		text-align:left;
 	}
+	.home-categories{
+
+		.home-box{
+			&:hover .home-box-content{
+				opacity: .7;
+				pointer-events: auto;
+				top:inherit;
+			}
+			.home-box-content{
+				display: none;
+				position:absolute;
+				top:inherit;
+				width:100%;
+				max-height: 240px;
+				bottom: 0;
+
+				background-color: #333;
+				text-align: center;
+				opacity:.70;
+				pointer-events:none;
+
+				@include transition(0.2s);
+
+				.btn{
+					border:2px solid white;
+					color: #fff;
+				}
+
+				h2{
+					color: #fff;
+					font-weight: 600;
+				}
+				p{
+					color: #fff;
+					font-size:1.2em;
+		
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width: 480px) {
 
-.home-feature{
-	background: white;
-	min-height:200px;
-	.container{
-		padding-top: 0px;
-		.col-md-4{
-			padding-bottom:50px;
-			text-align: center;
+	.home-feature{
+		background: white;
+		min-height:200px;
+		.container{
+			padding-top: 0px;
+			.col-md-4{
+				padding-bottom:50px;
+				text-align: center;
 
-			h1{
-				color: rgb(93, 98, 102);
-			}
-			p{
-				font-size:1.2em;
-				color:#acb1b4;
-			}
-		}
-	}
-}
-
-.home-categories{
-	.home-box{
-		&:hover .home-box-content{
-			opacity:1;
-			pointer-events: auto;
-			top:inherit;
-			bottom:0px;
-		}
-		.home-box-content{
-			position:absolute;
-			top:inherit;
-			bottom:30px;
-			width:100%;
-			padding-top:0;
-			height:21%;
-			background: rgba(255, 255, 255, 0.98);
-			background:none;
-			text-align: center;
-
-			opacity:1;
-			pointer-events:none;
-
-			@include transition(0.2s);
-
-			.btn{
-				border:2px solid white;
-				color: white;
-			}
-
-			h2{
-				color: rgb(93, 98, 102);
-				font-weight: 600;
-				display:none;
-			}
-			p{
-				color: #acb1b4;
-				font-size:1.2em;
-				display:none;
+				h1{
+					color: rgb(93, 98, 102);
+				}
+				p{
+					font-size:1.2em;
+					color:#acb1b4;
+				}
 			}
 		}
 	}
-}
+
+	.home-categories{
+		.home-box{
+			&:hover .home-box-content{
+				opacity: 1;
+				pointer-events: auto;
+				top:inherit;
+			}
+			.home-box-content{
+				position:absolute;
+				top:inherit;
+				bottom:30px;
+				width:100%;
+				padding-top:0;
+				height:21%;
+				background: rgba(255, 255, 255, 0.98);
+				background:none;
+				text-align: center;
+
+				opacity:1;
+				pointer-events:none;
+
+				@include transition(0.2s);
+
+				.btn{
+					border:2px solid white;
+					color: white;
+				}
+
+				h2{
+					color: rgb(93, 98, 102);
+					font-weight: 600;
+					display:none;
+				}
+				p{
+					color: #acb1b4;
+					font-size:1.2em;
+					display:none;
+				}
+			}
+		}
+	}
 
 // ============================== Newsletter ==============================
 .newsletter{
@@ -177,6 +216,8 @@
 		margin-top:10px;
 		padding-bottom:15px;
 		text-align: center;
+		margin-bottom: 5px;
+
 	}
 	.form-group{
 		input{
@@ -201,32 +242,4 @@
 }
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

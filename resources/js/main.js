@@ -34,6 +34,7 @@
 }));
 
 $(window).load(function() {
+    
   var unslider = $('.banner').unslider({
         fluid: true,
         dots: true,
@@ -53,4 +54,56 @@ $('.banner').hammer().bind('swiperight', function() {
 $('.banner').hammer().bind('swipeleft', function() {
   unslider.data('unslider').next();
 });
+
+    
+    // Move Login and Cart to top of nav on mobile
+    $('.navbar-right').prependTo('.navbar-collapse');
+
+    // animate falsh message ('add to cart') off screen.  
+    $( document ).ajaxSuccess(function( event, request, settings ) {
+        if ( $( '.to-cart-flash > .success' ).length ) {
+            var customeMsg = $( '.custome-msg' ).text();
+            $( '.to-cart-flash > .success' ).addClass( 'pulse' );
+            $( '.to-cart-flash > .success' ).text(customeMsg);
+            setTimeout(function() { 
+                $( '.to-cart-flash > .success' ).addClass( 'zoomOut' );
+            }, 2000);
+        }
+    });
+
+
+    // Show text over featured images on scroll (mobile)
+    function windowWidth() {
+      var windowWidth    = $(window).width(); 
+      return windowWidth; 
+    }
+
+    $(window).resize(function() {
+        if (windowWidth() > 768) {
+            $('.home-box-content').show();
+        }
+    });
+
+    $(window).scroll(function() {
+        var scrollTop     = $(window).scrollTop(),
+            elementOffset = $('.home-box').offset().top,
+            distance      = (elementOffset - scrollTop);
+        if (distance <= 200 && windowWidth() <= 768) {
+            $('.home-box-content').show();
+
+            if ( !$('nav').addClass('nav-mobile') ) {
+                $('nav').hide();
+                $('nav').addClass('nav-mobile');
+                $('nav').fadeIn();
+            }
+            
+        }
+        if(!$(window).scrollTop() && windowWidth() <= 768) { 
+            $('.home-box-content').hide();
+            $('nav').hide();
+            $('nav').removeClass('nav-mobile');
+            $('nav').show();
+        }         
+    }); // END
+
 });

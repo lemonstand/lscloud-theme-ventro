@@ -1,4 +1,7 @@
 @import "components/functions";
+#carousel-example-generic {
+  display: none;
+}
 .product-detail-top{
 	margin-top: 75px;
 	margin-bottom: 75px;
@@ -41,6 +44,7 @@
 		p{
 			color: #5d6266;
 			font-size:1.1em;
+      line-height: 1.6em;
 		}
 		.title{
 			color:#656565;
@@ -165,8 +169,6 @@ textarea.input-sm{
 	}
 }
 
-
-
 .chzn-select{
 	box-shadow: none;
 	border-radius:4px;
@@ -175,61 +177,182 @@ textarea.input-sm{
 	height: 43px;
 }
 
-
-
 .full-price{
 	text-decoration: line-through;
 	color: #acb1b4;
 }
 
 
+.add-cart-holder.form-group {
+  float: left;
+  width: 45%;
+  height: 100px;
+
+}
+.attribute-group {
+  width: 100%;
+}
+
+.add-to-cart-div {
+  padding-top: 58px;
+  margin-left: 50%;
+  height: 100px;
+
+}
+.add-to-cart {
+  height: 42px !important;
+}
+
+.product-options {
+  clear: both;
+}
+
+.select-option {
+  width: 98% !important;
+  height: 42px;
+}
+
 .success{
   background: #333;
-  padding: 4px;
+  padding: 10px;
   color: white!important;
   font-style: italic;
   text-transform: uppercase;
+  margin-top: 15px;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-delay: 0.5s; 
+  animation-delay: 0.5s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.zoomOut {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-delay: 4s; 
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
 
 }
-@keyframes fadeOut {
-    0% {
-        opacity:1;
-    }
-    100% {
-        opacity:0;
-        display:none;
-    }
-}
-@-moz-keyframes fadeOut {
-    0% {
-        opacity:1;
-    }
-    100% {
-        opacity:0;
-        display:none;
-    }
-}
-@-webkit-keyframes fadeOut {
-    0% {
-        opacity:1;
-    }
-    100% {
-        opacity:0;
-        display:none;
-    }
-}
-@-o-keyframes fadeOut {
-    0% {
-        opacity:1;
-    }
-    100% {
-        opacity:0;
-        display:none;
-    }
-}
+
+
 // ============================== MOBILE STYLES ==============================
-
+@media screen and (max-width: 992px) {
+  #carousel-example-generic {
+    display: block;
+  }
+  .banner, .product-gallery,
+  .main-img, .has-dots {
+    display: none !important;
+  }
+  .carousel-inner {
+    background-color: #70c0de;
+  }
+  .carousel-inner > .active > img,
+  .carousel-inner > .item > img {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
+  .product-options .custom-dropdown {
+    width: 46%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .select-option {
+    width: 100% !important;
+  }
+  .product-detail-top {
+    margin-top: 45px !important;
+  }
+}
 @media screen and (max-width: 480px) {
+
+  .add-cart-holder.form-group {
+    float: none;
+    width: 100%;
+  }
+
+  .add-to-cart-div {
+    padding-top: 28px;
+    margin-left: 0;
+    height: 100px;
+    width: 100%
+  }
+
 .product-detail-top{
 	margin-top: 75px;
 	margin-bottom: 75px;

@@ -16,7 +16,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Ventro</a>
+      <a class="navbar-brand" href="{{ site_url('/') }}">{{ theme.title }}</a>
+
+      <!-- logo in the header  -->
+      <a class="navbar-logo" href="{{ site_url('/') }}"><img src="{{ theme.logoImage.thumbnail('auto','auto') }}" alt="Ventro Store Logo"/></a>
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -47,8 +51,7 @@
 
           <li class="dropdown yamm-fw">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">About</a>
-            <ul class="dropdown-menu shop-drop">
-            <li>
+            <ul class="dropdown-menu shop-drop default-drop">
               <div class="container yamm-content">
                 <ul class="cat-box">
                   <li><a href="/about">About Us</a></li>
@@ -57,8 +60,6 @@
               </div>
             </ul>
           </li>
-
-
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -80,6 +81,16 @@
           </ul>
         </li>
         <li class="dropdown yamm-fw login-drop" >
+          <a href="#" class="search-botton dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Search</a>
+          <ul class="dropdown-menu shop-drop">
+            {{ open_form({'class': 'search', 'method': 'get', 'action': site_url('search')}) }}
+              <input class="search-box" type="text" name="query" value="{{query|unescape}}" placeholder="Search store&hellip;"/>
+            {{ close_form() }}
+          </ul>
+          
+        </li>
+
+        <li class="dropdown yamm-fw login-drop" >
             <a href="#" class="dropdown-toggle" id="cart-totals" data-toggle="dropdown">{{ partial('shop-minicart-totals') }}</a>
           <ul class="dropdown-menu shop-drop" id="login-drop">
           <li>
@@ -90,11 +101,6 @@
         </li>
       </ul>
       
-      
-
-
-
-
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

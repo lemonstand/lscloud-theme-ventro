@@ -1,8 +1,9 @@
-
+<title>{{ theme.title }}</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="Description" content="{{ page.description }}"/>
 <meta name="Keywords" content="{{ page.keywords }}"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="{{ theme.faviconImage.thumbnail('16', '16') }}"/>
 
 <link rel="shortcut icon" href="{{ theme.faviconImage.thumbnail('auto', 'auto') }}" type="image/png">
 <link rel="icon" href="{{ theme.faviconImage.thumbnail('auto', 'auto') }}" type="image/png">
@@ -17,11 +18,12 @@
 
 <link rel="stylesheet" href="{{ 'stylesheets/main.css'|theme_resource }}">
 <link rel="stylesheet" href="{{ 'stylesheets/checkout.css'|theme_resource }}">
+<link rel="stylesheet" href="{{ 'stylesheets/custom.css'|theme_resource }}">
 
 
 <style>
 
-.home-feature{
+.home-feature {
  	background: url({{ theme.homeHeaderImage.thumbnail('auto', 'auto') }} )no-repeat center right;
  	-webkit-background-size: cover;
   -moz-background-size: cover;
@@ -29,10 +31,17 @@
   background-size: cover;
 }
 
-
+@media screen and (max-width: 992px) {
+  .home-feature {
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  }
+}
 @media screen and (max-width: 480px) {
-	.home-feature{
-		background: white;
+	.home-feature {
+  -webkit-background-size: 90%;
+  background-size: 90%;
 	}
+  
 }
 </style>
