@@ -42,13 +42,13 @@
 
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="text" class="form-control input-sm" id="signup[first_name]" placeholder="First Name" name="signup[first_name]" value="{{ post('signup[first_name]') }}" size="16"/>
+                        <input type="text" class="form-control input-sm" id="signup[first_name]" placeholder="First Name *" name="signup[first_name]" value="{{ post('signup[first_name]') }}" size="16"/>
                         <span class="error small text-danger"></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="text" class="form-control input-sm" id="signup[last_name]" placeholder="Last Name" name="signup[last_name]" value="{{ post('signup[last_name]') }}" size="16"/>
+                        <input type="text" class="form-control input-sm" id="signup[last_name]" placeholder="Last Name *" name="signup[last_name]" value="{{ post('signup[last_name]') }}" size="16"/>
                         <span class="error small text-danger"></span>
                     </div>
                 </div>
@@ -56,22 +56,28 @@
 
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="email" class="form-control input-sm" id="signup[email]" placeholder="Email Address" name="signup[email]" value="{{ post('signup[email]') }}" size="40" />
-                        <span class="error small text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <input type="password" class="form-control input-sm" id="signup[password]" placeholder="Password" name="signup[password]" value="" size="16" />
+                        <input type="email" class="form-control input-sm" id="signup[email]" placeholder="Email Address *" name="signup[email]" value="{{ post('signup[email]') }}" size="40" />
                         <span class="error small text-danger"></span>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-12">
-                        <input type="password" class="form-control input-sm" id="signup[password_confirmation]" placeholder="Password Confirm" name="signup[password_confirmation]" value="" size="16" />
+                        <input type="password" class="form-control input-sm" id="signup[password]" placeholder="Password *" name="signup[password]" value="" size="16" />
                         <span class="error small text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="password" class="form-control input-sm" id="signup[password_confirmation]" placeholder="Password Confirm *" name="signup[password_confirmation]" value="" size="16" />
+                        <span class="error small text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="checkbox" name="accepts_marketing" id="accepts_marketing" checked/>Recieve promotional emails
                     </div>
                 </div>
 
