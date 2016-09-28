@@ -6,7 +6,7 @@ published: true
 name: 'Blog Post'
 url: /blog/:slug
 ---
-<div class="row">
+<div class="row blog-posts">
     <!-- BLOG -->
     {% if featured_image %}
         <img src="{{ featured_image.thumbnail(1000, 'auto')|default('http://placehold.it/1000x365') }}" width="1000" alt="{{ featured_image.alt }}"/>
