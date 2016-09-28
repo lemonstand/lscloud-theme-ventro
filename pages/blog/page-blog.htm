@@ -22,7 +22,9 @@ url: /blog
         {% endfor %}
     
         {% if archives | length == 0 or publishedPosts == 0 %}
-            <h2 class="blog posts">No posts found</h2>
+            <div class="blog-posts">
+                <h2>No posts found</h2>
+            </div>
         {% endif %}
     </div>
 </div>
