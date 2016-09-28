@@ -1,0 +1,27 @@
+---
+action: 'cmscontent:blog'
+template: inner
+protocol: all
+published: true
+name: 'Blog Post'
+url: /blog/:slug
+---
+<div class="row">
+    <!-- BLOG -->
+    {% if featured_image %}
+        <img src="{{ featured_image.thumbnail(1000, 'auto')|default('http://placehold.it/1000x365') }}" width="1000" alt="{{ featured_image.alt }}"/>
+    {% endif %}
+    <em class="twelve columns">In {{ post.type }} | {{ post.published_on | date("F j, Y") }}</em> 
+    {{ post.body | unescape }}
+    <!-- BIO -->
+	<div class="bio-container">
+	    {% if profile_image %}
+	        <img class="img-circle" src="{{ profile_image.thumbnail(252, 'auto')|default('http://placehold.it/100x100') }}" style="height: 100px; width: 100px;" alt="{{ profile_image.alt }}"/>
+	    {% endif %}
+	    <strong>{{ post.author_name }}</strong>
+	    {{ post.user.getSocialLinks()|unescape }}
+		<div class="author-bio">
+	        {{ post.user.user_bio|unescape }}
+		</div>
+	</div>
+</div>
