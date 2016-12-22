@@ -7,3 +7,18 @@
 .blog-posts {
 	margin-left: 25px;
 }
+
+.password-confirmation {
+	margin: auto;
+	width: 75%;
+}
+
+.passwordrestorrequest {
+	margin: auto;
+	width: 75%;
+}
+
+.password-restore {
+	margin: auto;
+	width: 75%;
+}
