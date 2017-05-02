@@ -1,0 +1,128 @@
+{
+  "settings": {
+    "logoImage": {
+      "type": "image",
+      "title": "Global: Logo Image",
+      "default": "@/images/logo.png"
+    },
+    "faviconImage": {
+      "type": "image",
+      "title": "Favicon Image",
+      "default": "@images/favicon.png",
+      "comment": "Upload your favicon. Recommended dimmensions of 16px by 16px. You must use a .png file."
+    },
+    "title": {
+      "type": "text",
+      "title": "title of your store",
+      "default": "Ventro"
+    },
+    "fbCommentsAppIDText": {
+      "type": "text",
+      "title": "Facebook Comments App ID",
+      "default": "123",
+      "comment": "For Facebook product reviews/comments to work, first create an app in Facebook, then paste in your app ID."
+    },
+    "socialFacebook": {
+      "type": "text",
+      "title": "Facebook URL",
+      "default": "https://www.facebook.com/lemonstand"
+    },
+    "socialTwitter": {
+      "type": "text",
+      "title": "Twitter URL",
+      "default": "https://twitter.com/lemonstand"
+    },
+    "socialInstagram": {
+      "type": "text",
+      "title": "Instagram URL",
+      "default": "https://instagram.com/lemonstand"
+    },
+    "socialMedium": {
+      "type": "text",
+      "title": "Medium URL",
+      "default": "https://medium.com"
+    },
+    "ajaxChimp": {
+      "type": "text",
+      "title": "MailChimp campaign URL",
+      "default": "http://blahblah.us1.list-manage.com/subscribe/post?u=5afsdhfuhdsiufdba6f8802&id=4djhfdsh9"
+    },
+    "homeHeaderImage": {
+      "type": "image",
+      "title": "Home Header Image",
+      "default": "@/images/main-bg.jpg"
+    },
+    "homeHeaderTitle": {
+      "type": "text",
+      "title": "Home Header Text",
+      "default": "Ingridglow"
+    },
+    "homeHeaderSubtitle": {
+      "type": "text",
+      "title": "Home Header SubTitle",
+      "default": "The new way to tell time."
+    },
+    "homeHeaderButtonURL": {
+      "type": "text",
+      "title": "Home Header category url name",
+      "default": "watches",
+      "comment": "Make sure the URL name is exactly the category Url name"
+    },
+    "homeHeaderButtonTitle": {
+      "type": "text",
+      "title": "Home Header Button Text",
+      "default": "Shop Watches"
+    },
+    "homeThreeCats": {
+      "type": "checkbox",
+      "title": "Home Page 3 Category Blocks",
+      "default": "1",
+      "comment": "Check to show"
+    },
+    "homeCatLeft": {
+      "type": "text",
+      "title": "Home category 1: url name",
+      "default": "fitness",
+      "comment": "Make sure the URL name is exactly the category Url name"
+    },
+    "homeCatLeftImg": {
+      "type": "image",
+      "title": "Home category 1: image",
+      "default": "@/images/box-health.jpg",
+      "comment": "Recommended size: 478x349"
+    },
+    "homeCatMiddle": {
+      "type": "text",
+      "title": "Home category 2: url name",
+      "default": "lifestyle",
+      "comment": "Make sure the URL name is exactly the category Url name"
+    },
+    "homeCatMiddleImg": {
+      "type": "image",
+      "title": "Home category 2: image",
+      "default": "@/images/box-lifestyle.jpg",
+      "comment": "Recommended size: 478x349"
+    },
+    "homeCatRight": {
+      "type": "text",
+      "title": "Home category 3: url name",
+      "default": "home",
+      "comment": "Make sure the URL name is exactly the category Url name"
+    },
+    "homeCatRightImg": {
+      "type": "image",
+      "title": "Home category 3: image",
+      "default": "@/images/box-home.jpg",
+      "comment": "Recommended size: 478x349"
+    },
+    "productSocial": {
+      "type": "checkbox",
+      "title": "Include Social Sharing Buttons on product pages",
+      "default": "1",
+      "comment": "Check to show"
+    }
+  },
+  "pages": {
+    "404": "404"
+  }
+}
