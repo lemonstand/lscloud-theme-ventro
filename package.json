@@ -9,8 +9,8 @@
     "options": "options.json",
     "demo" : "https//ventro.lemonstand.com",
     "screenshots" : {
-      "small":"https://raw.githubusercontent.com/lemonstand/lemonstand_ventro_repository/master/resources/screenshots/tiny-square.png",
-      "large":"https://raw.githubusercontent.com/lemonstand/lemonstand_ventro_repository/master/resources/screenshots/large-square.png"
+      "small":"https://raw.githubusercontent.com/lemonstand/lscloud-theme-ventro/master/resources/screenshots/tiny-square.png",
+      "large":"https://raw.githubusercontent.com/lemonstand/lscloud-theme-ventro/master/resources/screenshots/large-square.png"
     }
   },  
   "scripts": {
