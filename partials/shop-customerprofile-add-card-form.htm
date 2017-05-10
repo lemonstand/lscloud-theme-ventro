@@ -1,28 +1,33 @@
-<div>   
-    <div class="modal">
-        <div class="modal-fade-screen modal-form-fade-screen">
-            <div class="modal-inner add-card-modal">
-                <div class="modal-close" for="modal-1"></div>
-                <h1>Add Card</h1>
-                {{ customerCardForm('add', {
-                    options: {
-                        number:{
-                            placeholder: 'Card Number',
-                            style: "font-family: Courier New, Courier, monospace; letter-spacing: 0px; font-weight: 200; font-size: 16px; color: rgb(58, 61, 63); line-height: 32px; width: 345px;"
-                        },
-                        cvv: {
-                            placeholder: 'CVV',
-                            style: "font-family: Courier New, Courier, monospace; letter-spacing: 0px; font-weight: 200; font-size: 16px; color: rgb(58, 61, 63); line-height: 32px; width: 345px;"
-                        },
-                        is_default: {
-                            label:'Make my default card'
-                        }
-                    }
-                }, {
-                  'data-ajax-update': "#profile-edit-card=shop-customerprofile-edit-card"
-                }) }}
-
-            </div>
+<div class="form-close" id="add-card-form">
+    <div class="add-card-form">
+        <h3 class="boxed-heading b2b-muted b2b-h3">Add Card</h3>
+        <div class="add-card-form-container">
+            {{ customerCardForm('add', {
+                options: { 
+                    number:{
+                        label: ' ',
+                        placeholder: 'Card Number', 
+                        style: "font-family: verdana; letter-spacing: 0px; font-weight: 200; font-size: 12px; color: rgb(58, 61, 63); padding: 15px 19px 15px 20px; border: 1px solid #ccc; width: 91%;",
+                    },
+                    cvv: {
+                        label: ' ',
+                        placeholder: 'CVV',
+                        style: "font-family: verdana; letter-spacing: 0px; font-weight: 200; font-size: 12px; color: rgb(58, 61, 63); padding: 15px 19px 15px 20px; border: 1px solid #ccc; width: 91%;",
+                    },
+                    is_default: {
+                        label:'Make my default card'
+                    },
+                    expiry: {
+                        label:' '
+                    },
+                    full_name: {
+                        label:' ',
+                        placeholder: 'Cardholder Name'
+                    },
+                }
+            }, {
+              'data-ajax-update': "#profile-edit-card=shop-customerprofile-edit-card"
+            }) }}
         </div>
     </div>
 </div>
