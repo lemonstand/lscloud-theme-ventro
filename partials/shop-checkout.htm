@@ -392,8 +392,27 @@
 {% endif %}
 <div id="shop-checkout-payment-method" class="col-md-12 row">
 {% if cart %}
+    <!--  Pay with stored cards shown in dropdown -->
+    {% if cards is defined %}
+        <div class="col-md-12 form-group">
+            <h4>Pay with a Stored Card</h4>
+            <form class="custom" method="post" data-ajax-handler="shop:onPay">
+                <input type='hidden' name='payment_method_id' id='payment_method_id' value=''>
+                <select name="payment_method_token" class="form-control" id="saved_card_option" style="margin-bottom: 15px;">
+                    <option value=''> Select Stored card </option>
+                    {% for card in cards %}
+                        <option id="token-{{ card.token }}" value="{{ card.token }}" card-method="{{ card.paymentMethod.id }}">{{ card.paymentMethod.name }}: {{ card.cardAndBrand }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Pay with Stored Card" class="btn btn-important">
+            </form>
+        </div>
+        <div class="col-md-8">
+            <h4>or</h4>
+        </div>
+    {% endif %}
     <div class="col-md-12">
-        <p id="title-p-d">Select a Payment Method</p>
+      <h4>Select a Payment Method</h4>
       {% if step == 'billing_info' %}
         <p>Please fill out billing/shipping info</p>
       {% elseif step == 'shipping_method' %}
