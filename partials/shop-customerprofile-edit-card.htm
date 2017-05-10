@@ -1,5 +1,5 @@
 <div>
-    <div>
+    <div class="col-sm-6">
         <h3>Saved Cards</h3>
         {% if customer.cards|length %}
         <table class="card-table">
@@ -36,9 +36,9 @@
         {{ flash() }}
     </div>
 
-    <div>
+    <div class="col-sm-6">
         {% for card in customer.cards %}
-            {{ partial('shop-customerprofile-edit-card-form', {'card':card}) }}    
+            {{ partial('shop-customerprofile-edit-card-form', {'card' : card}) }}
         {% endfor %}
         
         {{ partial('shop-customerprofile-add-card-form') }}
