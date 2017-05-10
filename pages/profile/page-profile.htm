@@ -6,12 +6,18 @@ published: true
 name: Profile
 url: /profile
 ---
-
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
 			{% if customer %}
 				{{ partial('shop-customerprofile') }}
+                <!-- Using hasFeature helper method to check whether card variables should be accessed. -->
+                {% if hasFeature('saved-cards') %}
+                  {% set editedCard = '' %}
+                  <div id="profile-edit-card">
+                    {{ partial('shop-customerprofile-edit-card') }}
+                  </div>
+                {% endif %}
 			{% else %}
 				<h1>Please Login to edit your profile</h1>
 			{% endif %}
