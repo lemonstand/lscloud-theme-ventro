@@ -7,3 +7,59 @@
 .blog-posts {
 	margin-left: 25px;
 }
+
+
+/*
+ * Card Form Overrides
+ * See: buttons.scss for button style overrides.
+ */
+
+.ls-card-form {
+    width: 100%;
+}
+
+.ls-card-form .card-form-input {
+    background: white;
+    font-size: 15px;
+    font-family: inherit;
+    letter-spacing: inherit;
+    border-radius: 1px;
+    border-color: #ddd;
+    box-shadow: none;
+}
+
+.ls-card-form .card-form-input:focus {
+    background: inherit;
+}
+
+.ls-card-form .card-form-input::-webkit-input-placeholder {
+    font-family: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+}
+ 
+.ls-card-form .card-form-input:-moz-placeholder { /* Firefox 18- */
+    font-family: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+}
+ 
+.ls-card-form .card-form-input::-moz-placeholder {  /* Firefox 19+ */
+    font-family: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+}
+ 
+.ls-card-form .card-form-input:-ms-input-placeholder {
+    font-family: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+}
+
+.card-form-expiry-outer label {
+    display: inherit;
+}
+
+/*
+ * End Card Form Overrides
+ */
