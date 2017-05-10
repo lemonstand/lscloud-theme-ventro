@@ -60,6 +60,22 @@
     display: inherit;
 }
 
+.card-table {
+    font-size: 15px;
+    background-color: #F1F1F1;
+}
+
+.card-table th {
+    padding: 10px;
+}
+
+.card-form-close {
+    display: none;
+}
+.card-form-open {
+    display: block;
+}
+
 /*
  * End Card Form Overrides
  */

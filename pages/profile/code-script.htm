@@ -5,10 +5,11 @@
      * Show correct form on clicking add card
      */
     $("#profile-edit-card").on("click", "#add-card", function() {
+        console.log('here too');
         if(currentForm != '#add-card-form') {
             clearForm();
-            $('#add-card-form').removeClass('form-close');
-            $('#add-card-form').addClass('form-open');
+            $('#add-card-form').removeClass('card-form-close');
+            $('#add-card-form').addClass('card-form-open');
             currentForm = "#add-card-form";
         }
     });
@@ -21,8 +22,8 @@
 
         if (currentForm != card) {
             clearForm();
-            $(card).removeClass('form-close');
-            $(card).addClass('form-open');
+            $(card).removeClass('card-form-close');
+            $(card).addClass('card-form-open');
             currentForm = card;
         }
     });
@@ -37,8 +38,8 @@
     
     function clearForm() {
         if(currentForm != '') {
-            $(currentForm).addClass('form-close');
-            $(currentForm).removeClass('form-open');  
+            $(currentForm).addClass('card-form-close');
+            $(currentForm).removeClass('card-form-open');  
         }
         currentForm='';
     }
