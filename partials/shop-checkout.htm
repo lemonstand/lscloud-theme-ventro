@@ -267,7 +267,7 @@
 {{ open_form({'class': 'custom'}) }}
 
     <div class="col-md-12">
-    <p id="title-p-d">Choose a Shipping Method</p>
+    <h4>Choose a Shipping Method</h4>
 
     {% if step == 'billing_info' %}
       <p>Please fill out billing/shipping info</p>
@@ -275,7 +275,6 @@
       <p>Choose Payment method or start again</p>
     {% elseif step == 'shipping_method' %}
       {% if shippingOptions %}
-
             <input type="hidden" value="" name="shippingMethod"><br>
             <table class="compact full-width" id="shipping-methods">
               {% for index, option in shippingOptions %}
