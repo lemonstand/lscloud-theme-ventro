@@ -1,4 +1,6 @@
-{{ partial('newsletter') }}
+{% if page_code() != 'checkout' %}
+	{{ partial('newsletter') }}
+{% endif %}
 
 <footer>
 	<div class="container">
