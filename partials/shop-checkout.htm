@@ -395,16 +395,16 @@
     <!--  Pay with stored cards shown in dropdown -->
     {% if cards is defined %}
         <div class="col-md-12 form-group">
-            <h4>Pay with a Stored Card</h4>
+            <h4>Pay with a Saved Card</h4>
             <form class="custom" method="post" data-ajax-handler="shop:onPay">
                 <input type='hidden' name='payment_method_id' id='payment_method_id' value=''>
                 <select name="payment_method_token" class="form-control" id="saved_card_option" style="margin-bottom: 15px;">
-                    <option value=''> Select Stored card </option>
+                    <option value=''> Select Saved Card </option>
                     {% for card in cards %}
                         <option id="token-{{ card.token }}" value="{{ card.token }}" card-method="{{ card.paymentMethod.id }}">{{ card.paymentMethod.name }}: {{ card.cardAndBrand }}</option>
                     {% endfor %}
                 </select>
-                <input type="submit" value="Pay with Stored Card" class="btn btn-important">
+                <input type="submit" value="Pay with Saved Card" class="btn btn-important">
             </form>
         </div>
         <div class="col-md-8">
