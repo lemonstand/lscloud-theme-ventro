@@ -398,7 +398,7 @@
             <h4>Pay with a Saved Card</h4>
             <form class="custom" method="post" data-ajax-handler="shop:onPay">
                 <input type='hidden' name='payment_method_id' id='payment_method_id' value=''>
-                <select name="payment_method_token" class="form-control" id="saved_card_option" style="margin-bottom: 15px;">
+                <select name="payment_method_token" class="form-control saved-card-selector" id="saved_card_option" style="margin-bottom: 15px;">
                     <option value=''> Select Saved Card </option>
                     {% for card in cards %}
                         <option id="token-{{ card.token }}" value="{{ card.token }}" card-method="{{ card.paymentMethod.id }}">{{ card.paymentMethod.name }}: {{ card.cardAndBrand }}</option>
