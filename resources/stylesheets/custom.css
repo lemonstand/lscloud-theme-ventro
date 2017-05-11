@@ -76,6 +76,11 @@
     display: block;
 }
 
+.saved-card-selector {
+    width: 0;
+    min-width: 325px;
+}
+
 /*
  * End Card Form Overrides
  */
