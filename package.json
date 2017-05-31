@@ -7,7 +7,7 @@
     "code":"ventro",
     "type": "theme",
     "options": "options.json",
-    "demo" : "https//ventro.lemonstand.com",
+    "demo" : "https://ventro.lemonstand.com",
     "screenshots" : {
       "small":"https://raw.githubusercontent.com/lemonstand/lscloud-theme-ventro/master/resources/screenshots/tiny-square.png",
       "large":"https://raw.githubusercontent.com/lemonstand/lscloud-theme-ventro/master/resources/screenshots/large-square.png"
