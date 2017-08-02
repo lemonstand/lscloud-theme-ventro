@@ -117,7 +117,7 @@
           <span class="error small text-danger"></span>
         </div>
         <div class="col-sm-6 form-group">
-          <label for="billing_country" class="hide">Country</label>
+          <label for="billing_country">Country *</label>
           <!--
             The state selector updates automatically when the country changes.
             See app.js for the implementation details.
@@ -130,7 +130,7 @@
           <span class="error small text-danger"></span>
         </div>
         <div class="col-sm-6 form-group">
-          <label for="billing_state" class="hide">State</label>
+          <label for="billing_state">State *</label>
             <select data-mirror id="billing_state" class="chzn-select form-control" name="billingInfo[stateId]" data-ajax-refresh>
             {{ partial('shop-stateoptions', {'states': billingStates, 'selected': billingInfo.stateId}) }}
             </select>
@@ -189,7 +189,7 @@
           <span class="error small text-danger"></span>
         </div>
         <div class="col-sm-6 form-group">
-          <label for="shipping_country" class="hide">Country</label>
+          <label for="shipping_country">Country *</label>
             <select data-mirror id="shipping_country" class="chzn-select form-control disabled" name="shippingInfo[countryId]" data-state-selector="#shipping_state" data-current-state="{{ shippingInfo.stateId }}" >
             {% for country in countries %}
             <option {{ option_state(shippingInfo.countryId, country.id) }} value="{{ country.id }}">{{ country.name }}</option>
@@ -198,7 +198,7 @@
           <span class="error small text-danger"></span>
         </div>
         <div class="col-sm-6 form-group">
-          <label for="shipping_state" class="hide">State</label>
+          <label for="shipping_state">State *</label>
             <select data-mirror id="shipping_state" class="chzn-select form-control disabled" name="shippingInfo[stateId]" data-ajax-refresh >
             {{ partial('shop-stateoptions', {'states': shippingStates, 'selected': shippingInfo.stateId}) }}
             </select>
