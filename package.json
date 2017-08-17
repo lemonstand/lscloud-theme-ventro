@@ -2,6 +2,7 @@
   "name": "Ventro",
   "version": "1.0.0",
   "description": "Ventro is a modern responsive theme with clean lines, and minimal color. It is full-width, allowing you to use large hero images to express your value proposition and highlight your latest product. The homepage also has space for three featured categories, with a focus on imagery for visual appeal. The product pages continue with the modern layout with product images on the left, a description on the right, and then a section below for further details or product specifications.",
+  "excerpt": "Ventro is a theme with clean lines and minimal color that is full width and sports large hero images.",
   "main": "index.js",
   "lemonstand" : {
     "code":"ventro",
