@@ -1,4 +1,7 @@
 @import "components/functions";
+#mini-cart {
+	margin: 25px !important;
+}
 .promotion-bar{
 	position:relative;
 	background:#333;
@@ -446,6 +449,14 @@ footer{
 			list-style:none;
 			padding-left:0;
 		}
+		.cat-box ul li {
+			&:last-child {
+				padding-bottom: 25px;
+			}
+			a {
+				padding-left: 15px;
+			}
+		}
 		.cat-box{
 			display:inline-block;
 			padding:0%;
@@ -467,7 +478,7 @@ footer{
 				padding-bottom:10px;
 				font-size:0.9em;
 				letter-spacing: 1px;
-				margin-bottom:20px;
+				margin-bottom: 5px;
 				border-bottom:1px solid #f1f1f1;
 				text-transform: uppercase;
 

@@ -59,20 +59,7 @@ $('.banner').hammer().bind('swipeleft', function() {
     // Move Login and Cart to top of nav on mobile
     $('.navbar-right').prependTo('.navbar-collapse');
 
-    // Hover on product grid
-    $( '.product-button'  )
-      .mouseenter(function() {
-        $(this).siblings().css({
-            'opacity':'.33'
-        });
-      })
-      .mouseleave(function() {
-        $(this).siblings().css({
-            'opacity':'1'
-        });
-      });
-
-    // animate falsh message ('add to cart') off screen.  
+    // animate falsh message ('add to cart').  
     $( document ).ajaxSuccess(function( event, request, settings ) {
         if ( $( '.to-cart-flash > .success' ).length ) {
             var customeMsg = $( '.custome-msg' ).text();
@@ -81,11 +68,9 @@ $('.banner').hammer().bind('swipeleft', function() {
             setTimeout(function() { 
                 $( '.to-cart-flash > .success' ).addClass( 'zoomOut' );
             }, 2000);
-            $( '.main-img' ).zoom();
         }
     });
 
-    $( '.main-img' ).zoom();
 
     // Show text over featured images on scroll (mobile)
     function windowWidth() {
@@ -100,9 +85,17 @@ $('.banner').hammer().bind('swipeleft', function() {
     });
 
     $(window).scroll(function() {
-        var scrollTop     = $(window).scrollTop(),
+
+        var scrollTop;
+        var elementOffset;
+        var distance;
+
+        if ( $('.home-box').length ) {
+            scrollTop     = $(window).scrollTop(),
             elementOffset = $('.home-box').offset().top,
             distance      = (elementOffset - scrollTop);
+        }
+        
         if (distance <= 200 && windowWidth() <= 768) {
             $('.home-box-content').show();
 
@@ -121,7 +114,52 @@ $('.banner').hammer().bind('swipeleft', function() {
         }         
     }); // END
 
+    // Star Rating
+    $('.rating > span').click(function() {
+        var currentId = $(this).attr('id');
+        if ( currentId === 'hate' ) {
+            $('#hate').addClass('select');
+            $( '#dont-like, #ok, #like, #love' ).removeClass('select');
+            $('.rating > p').text( 'I hate it' );
+            $("#item_rating").val('1');
+        }
+        if ( currentId === 'dont-like' ) {
+            $( '#hate, #dont-like' ).addClass('select');
+            $( '#ok, #like, #love' ).removeClass('select');
+            $('.rating > p').text( 'I don\'t like it' );
+            $("#item_rating").val('2');
+        }
+        if ( currentId === 'ok' ) {
+            $( '#hate, #dont-like, #ok' ).addClass('select');
+            $( '#like, #love' ).removeClass('select');
+            $('.rating > p').text( 'It\'s ok' );
+            $("#item_rating").val('3');
+        }
+        if ( currentId === 'like' ) {
+            $( '#hate, #dont-like, #ok, #like' ).addClass('select');
+            $( '#love' ).removeClass('select');
+            $('.rating > p').text( 'I like it' );
+            $("#item_rating").val('4');
+        }
+        if ( currentId === 'love' ) {
+            $( '#hate, #dont-like, #ok, #like, #love' ).addClass('select');
+            $('.rating > p').text( 'I love it' );
+            $("#item_rating").val('5');
+        }
         
+    }); // END
+
+    // Review Modal
+    $('.review-header a').click(function() {
+        $('#writeModal').modal({
+            show: true
+        });
+    });
+    $('#writeModal').on('hidden.bs.modal', function () {
+      $('body').css({
+          'padding-right':'0'
+      });
+    }); // END
+    
 
 });
-

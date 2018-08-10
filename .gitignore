@@ -4,3 +4,4 @@ desktop.ini
 Thumbs.db
 .sass-cache
 *.cfg
+node_modules

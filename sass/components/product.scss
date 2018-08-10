@@ -1,4 +1,7 @@
 @import "components/functions";
+#carousel-example-generic {
+  display: none;
+}
 .product-detail-top{
 	margin-top: 75px;
 	margin-bottom: 75px;
@@ -307,9 +310,33 @@ textarea.input-sm{
 
 
 // ============================== MOBILE STYLES ==============================
+@media screen and (max-width: 992px) {
+  #carousel-example-generic {
+    display: block;
+  }
+  .banner, .product-gallery,
+  .main-img, .has-dots {
+    display: none !important;
+  }
+  .carousel-inner {
+    background-color: #70c0de;
+  }
+  .carousel-inner > .active > img,
+  .carousel-inner > .item > img {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
+  .product-options .custom-dropdown {
+    width: 46%;
+  }
+}
 @media screen and (max-width: 768px) {
   .select-option {
     width: 100% !important;
+  }
+  .product-detail-top {
+    margin-top: 45px !important;
   }
 }
 @media screen and (max-width: 480px) {

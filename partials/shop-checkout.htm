@@ -1,11 +1,10 @@
-  {% if step == 'billing_info' %}
+{% if step == 'billing_info' %}
     {% set inputs %}
       <input type="hidden" name="step" value="billing_info,shipping_info">
       <input type="hidden" name="nextStep" value="shipping_method"/>
     {% endset %}
   {% elseif step == 'shipping_method' %}
     {% set inputs %}
-    <input  style="display:none"  type="text" name="orderNotes" value="{{ orderNotes }}"/>
       <input type="hidden" name="step" value="shipping_method">
       <input type="hidden" name="nextStep" value="pay"/>
     {% endset %}
@@ -42,7 +41,7 @@
         
       </p>
     </div>
-    <div class="col-md-6 columns text-right">
+    <div class="col-md-6 columns text-right"> 
       {% if step == 'billing_info' %}
         <span class="status">In Progress</span>
       {% elseif step == 'shipping_method' %}
