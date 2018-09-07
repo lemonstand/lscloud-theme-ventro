@@ -2,6 +2,65 @@
 #carousel-example-generic {
   display: none;
 }
+.to-cart-flash {
+  height: 50px;
+}
+#writeModal form {
+  margin: 0 15px;
+}
+.modal-dialog {
+  min-height: 100%;
+}
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+  font-size: 7em;
+  span {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  span:hover, span:hover ~ span {
+    color: transparent;
+  }
+  span:hover:before, span:hover ~ span:before {
+    content: "\2605";
+    position: absolute; 
+    color: gold;
+  }
+  span.select {
+    color: transparent;
+  }
+  span.select:before {
+    content: "\2605";
+    position: absolute; 
+    color: gold;
+  }
+  p {
+    font-size: 2.5rem;
+  }
+} 
+
+.modal-controls {
+  float: right;
+  word-spacing: 10px;
+}
+body.modal-open {margin-right: 0px}
+
+
+.review-header, .review-body {
+  display: inline-block;
+  width: 49%;
+}
+
+.review-body {
+  vertical-align: top;
+  line-height: 120%;
+  p {
+    line-height: 140%;
+  }
+}
 .product-detail-top{
 	margin-top: 75px;
 	margin-bottom: 75px;

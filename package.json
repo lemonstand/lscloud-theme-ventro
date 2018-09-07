@@ -1,8 +1,27 @@
 {
+<<<<<<< HEAD
   "name": "lscloud-theme-ventro",
   "version": "1.0.0",
   "description": "A theme for LemonStand 2",
   "main": "theme.yaml",
+=======
+  "name": "Ventro",
+  "version": "1.0.0",
+  "description": "Ventro is a modern responsive theme with clean lines, and minimal color. It is full-width, allowing you to use large hero images to express your value proposition and highlight your latest product. The homepage also has space for three featured categories, with a focus on imagery for visual appeal. The product pages continue with the modern layout with product images on the left, a description on the right, and then a section below for further details or product specifications.",
+  "excerpt": "Ventro is a theme with clean lines and minimal color that is full width and sports large hero images.",
+  "main": "index.js",
+  "lemonstand" : {
+    "code":"ventro",
+    "type": "theme",
+    "options": "options.json",
+    "demo": "https://ventro.lemonstand.com",
+    "screenshots" : {
+      "small": "https://raw.githubusercontent.com/lemonstand/lscloud-theme-ventro/master/resources/screenshots/tiny-square.png",
+      "large": "https://raw.githubusercontent.com/lemonstand/lscloud-theme-ventro/master/resources/screenshots/large-square.png",
+      "full": "https://raw.githubusercontent.com/lemonstand/lscloud-theme-ventro/master/resources/screenshots/full-size.png"
+    }
+  },
+>>>>>>> 323673364813ac849fc3de1bbd80e44aefee256e
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +29,11 @@
     "type": "git",
     "url": "git+https://github.com/lemonstand/lscloud-theme-ventro.git"
   },
+<<<<<<< HEAD
   "author": "Daniel Park",
+=======
+  "author": "LemonStand <support@lemonstand.com> (http://docs.lemonstand.com)",
+>>>>>>> 323673364813ac849fc3de1bbd80e44aefee256e
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lemonstand/lscloud-theme-ventro/issues"
@@ -22,5 +45,15 @@
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.2.0"
+<<<<<<< HEAD
   }
+=======
+  },
+  "keywords": [
+    "1-page-checkout",
+    "hero-image",
+    "responsive",
+    "electronics"
+  ]
+>>>>>>> 323673364813ac849fc3de1bbd80e44aefee256e
 }

@@ -1,4 +1,6 @@
-{{ partial('newsletter') }}
+{% if page_code() != 'checkout' %}
+	{{ partial('newsletter') }}
+{% endif %}
 
 <footer>
 	<div class="container">
@@ -52,15 +54,12 @@
 	</div>
 </footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="{{ 'js/ajaxchimp.min.js'|theme_resource }}"></script>
 <script src="{{ 'js/hammer.min.js'|theme_resource }}"></script>
 <script src="{{ 'js/slider.min.js'|theme_resource }}"></script>
 <script src="{{ 'js/main.js'|theme_resource }}"></script>
 <script src="{{ 'js/checkout.js'|theme_resource }}"></script>
-<script src="/cms/core.js"></script>
 
 <script type="text/javascript">
 	$('#mc-form').ajaxChimp({
