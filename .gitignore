@@ -6,3 +6,4 @@ Thumbs.db
 *.cfg
 node_modules
 package.json
+.sass-cache/.DS_Store
